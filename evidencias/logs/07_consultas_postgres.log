@@ -1,11 +1,11 @@
  ejecucion |              job               |  estado   |  salida   |  inicio  |  ms  
 -----------+--------------------------------+-----------+-----------+----------+------
-         1 | reporteTransaccionesDiariasJob | COMPLETED | COMPLETED | 01:52:21 |  266
-         2 | calculoInteresesMensualesJob   | COMPLETED | COMPLETED | 01:52:23 |  217
-         3 | estadosCuentaAnualesJob        | COMPLETED | COMPLETED | 01:52:25 |  256
-         4 | migracionCompletaJob           | COMPLETED | COMPLETED | 01:52:27 |  292
-         5 | migracionCompletaJob           | COMPLETED | COMPLETED | 01:52:29 | 1263
-         6 | reporteTransaccionesDiariasJob | COMPLETED | COMPLETED | 01:52:32 |  195
+         1 | reporteTransaccionesDiariasJob | COMPLETED | COMPLETED | 01:58:14 |  263
+         2 | calculoInteresesMensualesJob   | COMPLETED | COMPLETED | 01:58:16 |  225
+         3 | estadosCuentaAnualesJob        | COMPLETED | COMPLETED | 01:58:18 |  256
+         4 | migracionCompletaJob           | COMPLETED | COMPLETED | 01:58:20 |  258
+         5 | migracionCompletaJob           | COMPLETED | COMPLETED | 01:58:21 | 1554
+         6 | reporteTransaccionesDiariasJob | COMPLETED | COMPLETED | 01:58:25 |  260
 (6 rows)
 
  id |              step              | leidos | escritos | omitidos | filtrados | rollbacks |  estado   
@@ -19,16 +19,16 @@
   7 | procesarMovimientosAnualesStep |      9 |        9 |        0 |         0 |         0 | COMPLETED
   8 | compilarEstadosCuentaStep      |      0 |        8 |        0 |         0 |         0 | COMPLETED
   9 | exportarRechazadosStep         |      0 |        0 |        0 |         0 |         0 | COMPLETED
- 10 | procesarTransaccionesStep      |     10 |        8 |        2 |         0 |         2 | COMPLETED
- 11 | procesarInteresesStep          |      8 |        5 |        3 |         0 |         3 | COMPLETED
- 12 | procesarMovimientosAnualesStep |      9 |        9 |        0 |         0 |         0 | COMPLETED
- 13 | compilarEstadosCuentaStep      |      0 |        8 |        0 |         0 |         0 | COMPLETED
- 14 | generarResumenDiarioStep       |      0 |        7 |        0 |         0 |         0 | COMPLETED
- 15 | generarResumenInteresesStep    |      0 |        5 |        0 |         0 |         0 | COMPLETED
+ 10 | procesarInteresesStep          |      8 |        5 |        3 |         0 |         3 | COMPLETED
+ 11 | procesarMovimientosAnualesStep |      9 |        9 |        0 |         0 |         0 | COMPLETED
+ 12 | procesarTransaccionesStep      |     10 |        8 |        2 |         0 |         2 | COMPLETED
+ 13 | generarResumenDiarioStep       |      0 |        7 |        0 |         0 |         0 | COMPLETED
+ 14 | generarResumenInteresesStep    |      0 |        5 |        0 |         0 |         0 | COMPLETED
+ 15 | compilarEstadosCuentaStep      |      0 |        8 |        0 |         0 |         0 | COMPLETED
  16 | exportarRechazadosStep         |      0 |        5 |        0 |         0 |         0 | COMPLETED
- 17 | procesarInteresesStep          |   1000 |      327 |      664 |         9 |       664 | COMPLETED
+ 17 | procesarMovimientosAnualesStep |   1000 |      952 |       48 |         0 |        48 | COMPLETED
  18 | procesarTransaccionesStep      |   1000 |      491 |      509 |         0 |       509 | COMPLETED
- 19 | procesarMovimientosAnualesStep |   1000 |      952 |       48 |         0 |        48 | COMPLETED
+ 19 | procesarInteresesStep          |   1000 |      327 |      664 |         9 |       664 | COMPLETED
  20 | compilarEstadosCuentaStep      |      0 |       20 |        0 |         0 |         0 | COMPLETED
  21 | generarResumenDiarioStep       |      0 |      267 |        0 |         0 |         0 | COMPLETED
  22 | generarResumenInteresesStep    |      0 |      327 |        0 |         0 |         0 | COMPLETED

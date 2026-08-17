@@ -9,45 +9,45 @@
   Desarrollo Backend III (PBY2203) :: Duoc UC
 
 
-01:52:30 INFO  Starting BancoXyzBatchApplication v1.0.0 using Java 21.0.11 with PID 41112 (/Users/diegocarvajalarias/Desktop/Cursos/Duoc/17-Desarrollo Backend III/Semana 01/banco-xyz-batch/target/banco-xyz-batch-1.0.0.jar started by diegocarvajalarias in /Users/diegocarvajalarias/Desktop/Cursos/Duoc/17-Desarrollo Backend III/Semana 01/banco-xyz-batch)
-01:52:30 INFO  No active profile set, falling back to 1 default profile: "default"
-01:52:30 INFO  Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-01:52:30 INFO  Finished Spring Data repository scanning in 18 ms. Found 6 JPA repository interfaces.
-01:52:31 INFO  HikariPool-1 - Starting...
-01:52:31 INFO  HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@43d9f1a2
-01:52:31 INFO  HikariPool-1 - Start completed.
-01:52:31 INFO  No LoadTimeWeaver setup: ignoring JPA class transformer
-01:52:31 INFO  Initialized JPA EntityManagerFactory for persistence unit 'default'
-01:52:31 INFO  Started BancoXyzBatchApplication in 1.332 seconds (process running for 1.503)
-01:52:32 INFO  
-01:52:32 INFO  ========================================================================================================
-01:52:32 INFO    BANCO XYZ | MIGRACION BATCH -> reporteTransaccionesDiariasJob
-01:52:32 INFO    Parametros: carpetaEntrada=data/semana_1, carpetaSalida=salida, ejecucion=2026-08-17T01:52:32.001084
-01:52:32 INFO  ========================================================================================================
-01:52:32 INFO  Executing step: [procesarTransaccionesStep]
-01:52:32 WARN  Simulando caida transitoria de la base de datos en el primer chunk (10 items). El RetryPolicy debe reintentar y completar la escritura.
-01:52:32 INFO  Step: [procesarTransaccionesStep] executed in 94ms
-01:52:32 INFO  Executing step: [generarResumenDiarioStep]
-01:52:32 INFO  Archivo de salida generado: salida/reporte_transacciones_diarias.csv
-01:52:32 INFO  Reporte diario compilado: 8 dias, 10 transacciones, 4 anomalias
-01:52:32 INFO  Step: [generarResumenDiarioStep] executed in 62ms
-01:52:32 INFO  Executing step: [exportarRechazadosStep]
-01:52:32 INFO  Bitacora de rechazos exportada: 0 registros en salida/rechazados_reporteTransaccionesDiarias.csv
-01:52:32 INFO  Step: [exportarRechazadosStep] executed in 6ms
-01:52:32 INFO  
-01:52:32 INFO  ========================================================================================================
-01:52:32 INFO    RESUMEN DE EJECUCION -> reporteTransaccionesDiariasJob
-01:52:32 INFO    jobExecutionId=6  estado=COMPLETED  duracion=194 ms
-01:52:32 INFO  --------------------------------------------------------------------------------------------------------
-01:52:32 INFO    STEP                                 LEIDOS  ESCRITOS  OMITIDOS  FILTRADOS  ROLLBACKS  ESTADO
-01:52:32 INFO    procesarTransaccionesStep                10        10         0          0          1  COMPLETED
-01:52:32 INFO    generarResumenDiarioStep                  0         8         0          0          0  COMPLETED
-01:52:32 INFO    exportarRechazadosStep                    0         0         0          0          0  COMPLETED
-01:52:32 INFO  --------------------------------------------------------------------------------------------------------
-01:52:32 INFO    Bitacora de rechazos: 0 registros (omitidos por excepcion=0, filtrados por duplicado=0)
-01:52:32 INFO  ========================================================================================================
-01:52:32 INFO  
-01:52:32 INFO  Job 'reporteTransaccionesDiariasJob' finalizado con estado COMPLETED
-01:52:32 INFO  Closing JPA EntityManagerFactory for persistence unit 'default'
-01:52:32 INFO  HikariPool-1 - Shutdown initiated...
-01:52:32 INFO  HikariPool-1 - Shutdown completed.
+01:58:23 INFO  Starting BancoXyzBatchApplication v1.0.0 using Java 21.0.11 with PID 45750 (/Users/diegocarvajalarias/Desktop/Cursos/Duoc/17-Desarrollo Backend III/Semana 01/banco-xyz-batch/target/banco-xyz-batch-1.0.0.jar started by diegocarvajalarias in /Users/diegocarvajalarias/Desktop/Cursos/Duoc/17-Desarrollo Backend III/Semana 01/banco-xyz-batch)
+01:58:23 INFO  No active profile set, falling back to 1 default profile: "default"
+01:58:24 INFO  Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+01:58:24 INFO  Finished Spring Data repository scanning in 21 ms. Found 6 JPA repository interfaces.
+01:58:24 INFO  HikariPool-1 - Starting...
+01:58:24 INFO  HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@43d9f1a2
+01:58:24 INFO  HikariPool-1 - Start completed.
+01:58:24 INFO  No LoadTimeWeaver setup: ignoring JPA class transformer
+01:58:24 INFO  Initialized JPA EntityManagerFactory for persistence unit 'default'
+01:58:25 INFO  Started BancoXyzBatchApplication in 1.379 seconds (process running for 1.567)
+01:58:25 INFO  
+01:58:25 INFO  ========================================================================================================
+01:58:25 INFO    BANCO XYZ | MIGRACION BATCH -> reporteTransaccionesDiariasJob
+01:58:25 INFO    Parametros: carpetaEntrada=data/semana_1, carpetaSalida=salida, ejecucion=2026-08-17T01:58:25.070919
+01:58:25 INFO  ========================================================================================================
+01:58:25 INFO  Executing step: [procesarTransaccionesStep]
+01:58:25 WARN  Simulando caida transitoria de la base de datos en el primer chunk (10 items). El RetryPolicy debe reintentar y completar la escritura.
+01:58:25 INFO  Step: [procesarTransaccionesStep] executed in 53ms
+01:58:25 INFO  Executing step: [generarResumenDiarioStep]
+01:58:25 INFO  Archivo de salida generado: salida/reporte_transacciones_diarias.csv
+01:58:25 INFO  Reporte diario compilado: 8 dias, 10 transacciones, 4 anomalias
+01:58:25 INFO  Step: [generarResumenDiarioStep] executed in 61ms
+01:58:25 INFO  Executing step: [exportarRechazadosStep]
+01:58:25 INFO  Bitacora de rechazos exportada: 0 registros en salida/rechazados_reporteTransaccionesDiarias.csv
+01:58:25 INFO  Step: [exportarRechazadosStep] executed in 5ms
+01:58:25 INFO  
+01:58:25 INFO  ========================================================================================================
+01:58:25 INFO    RESUMEN DE EJECUCION -> reporteTransaccionesDiariasJob
+01:58:25 INFO    jobExecutionId=6  estado=COMPLETED  duracion=260 ms
+01:58:25 INFO  --------------------------------------------------------------------------------------------------------
+01:58:25 INFO    STEP                                 LEIDOS  ESCRITOS  OMITIDOS  FILTRADOS  ROLLBACKS  ESTADO
+01:58:25 INFO    procesarTransaccionesStep                10        10         0          0          1  COMPLETED
+01:58:25 INFO    generarResumenDiarioStep                  0         8         0          0          0  COMPLETED
+01:58:25 INFO    exportarRechazadosStep                    0         0         0          0          0  COMPLETED
+01:58:25 INFO  --------------------------------------------------------------------------------------------------------
+01:58:25 INFO    Bitacora de rechazos: 0 registros (omitidos por excepcion=0, filtrados por duplicado=0)
+01:58:25 INFO  ========================================================================================================
+01:58:25 INFO  
+01:58:25 INFO  Job 'reporteTransaccionesDiariasJob' finalizado con estado COMPLETED
+01:58:25 INFO  Closing JPA EntityManagerFactory for persistence unit 'default'
+01:58:25 INFO  HikariPool-1 - Shutdown initiated...
+01:58:25 INFO  HikariPool-1 - Shutdown completed.
