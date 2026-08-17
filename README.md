@@ -102,7 +102,7 @@ util/         ParseadorFechas · ParseadorNumeros · EscritorCsv
 | Spring Data JPA / Hibernate | 6.x | Persistencia de los datos migrados |
 | PostgreSQL | 17 (Docker) | Base de datos destino **y** JobRepository |
 | H2 | 2.x | Base en memoria para las pruebas |
-| JUnit 5 · Mockito · AssertJ | — | 95 pruebas |
+| JUnit 5 · Mockito · AssertJ | — | 99 pruebas |
 | JaCoCo | 0.8.12 | Cobertura (96,4 % instrucciones) |
 
 ---
@@ -128,7 +128,7 @@ tablas `BATCH_*` del JobRepository se crean solas en el primer arranque.
 ### 4.3 Compilar y probar
 
 ```bash
-./mvnw clean package          # compila, corre las 95 pruebas y arma el jar
+./mvnw clean package          # compila, corre las 99 pruebas y arma el jar
 ```
 
 Cobertura JaCoCo en `target/site/jacoco/index.html`.
@@ -168,7 +168,7 @@ son 1.000 filas por archivo con todos los defectos mezclados.
 |---|---|---|
 | `transacciones.csv` | id, fecha, monto, tipo | montos negativos o cero, montos vacíos, fechas en 4 formatos, fechas inexistentes (`2024-13-01`), tipo `invalid`, transacciones repetidas |
 | `intereses.csv` | cuenta_id, nombre, saldo, edad, tipo | saldos vacíos, edades vacías o fuera de rango (100), tipo `-1`, titular `Unknown`, cuentas repetidas |
-| `cuentas_anuales.csv` | cuenta_id, fecha, transaccion, monto, descripción | fechas en formatos mixtos, montos vacíos, depósitos con monto negativo, descripciones faltantes |
+| `cuentas_anuales.csv` | cuenta_id, fecha, transaccion, monto, descripción | fechas en formatos mixtos, montos vacíos, depósitos con monto negativo, descripciones faltantes, el mismo tipo escrito con y sin tilde (`deposito` / `depósito`) |
 
 ### Criterio de tratamiento
 
@@ -177,7 +177,7 @@ La decisión de diseño central es que **no todo dato defectuoso merece el mismo
 | Situación | Tratamiento | Por qué |
 |---|---|---|
 | Fecha ilegible, monto no numérico, tipo fuera del catálogo, edad fuera de rango | **Omitir** (`DatoInvalidoException` → `SkipPolicy` → bitácora) | No hay forma de deducir el valor correcto sin inventarlo |
-| Fecha en formato legacy, descripción vacía, signo del monto inconsistente, titular `Unknown` | **Corregir** y dejar anotado en `observacion` | El dato correcto es deducible sin ambigüedad |
+| Fecha en formato legacy, tipo escrito con tilde, descripción vacía, signo del monto inconsistente, titular `Unknown` | **Corregir** y dejar anotado en `observacion` | El dato correcto es deducible sin ambigüedad |
 | Monto no positivo, monto sobre el umbral, cuenta o movimiento repetido | **Migrar marcado** como `anomalia = true` | Un banco no puede hacer desaparecer un movimiento: se señala para revisión |
 | Fila idéntica repetida (todos los campos) | **Filtrar** (`ItemProcessor` devuelve `null`) → bitácora | Es una copia, no aporta información |
 | Fallo de base de datos, disco o configuración | **Reintentar** hasta 3 veces; si persiste, **detener el Job** | Seguir adelante produciría una migración incompleta que parece exitosa |
@@ -218,6 +218,11 @@ La decisión de diseño central es que **no todo dato defectuoso merece el mismo
   `retiro`, `compra` y `pago`, derivado del tipo y no del dato de origen. Así el estado de
   cuenta es una suma simple. Un depósito cargado en negativo se corrige *y* se marca como
   anomalía, porque es un error de captura, no una convención distinta.
+- **Normalización del tipo**: el archivo escribe el mismo movimiento como `deposito` y como
+  `depósito` según quién cargó la fila. `ParseadorNumeros.normalizarTexto` quita los
+  diacríticos antes de contrastar contra el catálogo, de modo que ambas formas se migran como
+  el mismo tipo y la corrección queda anotada. Sin esto, 52 depósitos de `semana_3` (94.800 en
+  montos) desaparecían del estado de cuenta anual.
 - Descripción vacía → se completa con `Sin descripcion` (enriquecimiento).
 - El estado anual agrupa por cuenta y año: cantidad de movimientos, total de depósitos,
   total de cargos, saldo neto, primera y última fecha, y movimientos con anomalía.
@@ -233,7 +238,7 @@ La decisión de diseño central es que **no todo dato defectuoso merece el mismo
 | `SkipListener` | `RegistroRechazadoSkipListener` | Cada omisión queda en `registro_rechazado` con archivo, **línea**, motivo y contenido crudo |
 | Transacción propia | `RegistroRechazadoService` con `REQUIRES_NEW` | La bitácora sobrevive al rollback del chunk que la originó |
 | Chunk transaccional | `chunk(100, transactionManager)` | Un error revierte solo su bloque, no la migración completa |
-| Reinicio | `JobRepository` en PostgreSQL + lectores con nombre | Un Job caído se reanuda desde el último Step completado |
+| Reinicio | `JobRepository` en PostgreSQL + lectores con nombre | Deja preparada la reanudación: el estado de cada Step queda persistido. Para usarla hay que relanzar con los **mismos** `JobParameters`; el lanzador agrega hoy una marca de tiempo identificatoria, que crea una `JobInstance` nueva en cada corrida |
 
 ### Deduplicación segura ante reprocesos
 
@@ -298,14 +303,22 @@ Corridas reales contra PostgreSQL (`evidencias/logs/`):
 | Job 2 — intereses | `semana_1` | 8 | 8 | 0 | 0 | COMPLETED |
 | Job 3 — estados de cuenta | `semana_1` | 9 | 9 | 0 | 0 | COMPLETED |
 | Migración completa | `semana_2` | 27 | 22 | 5 | 0 | COMPLETED |
-| Migración completa | `semana_3` | 3.000 | 1.718 | 1.273 | 9 | COMPLETED |
+| Migración completa | `semana_3` | 3.000 | 1.770 | 1.221 | 9 | COMPLETED |
 | Job 1 con fallo simulado | `semana_1` | 10 | 10 | 0 | 0 | COMPLETED (1 rollback) |
 
+Los «leídos» son las filas que entraron al pipeline y los «escritos» las que quedaron
+migradas; los omitidos y filtrados suman exactamente la diferencia, y cada uno de ellos está
+en la bitácora con su archivo, su línea y su motivo.
+
 Sobre `semana_3` (1.000 filas por archivo, el caso más degradado), el Job 1 migró 491
-transacciones: corrigió 374 fechas en formato legacy y marcó 166 anomalías (90 montos no
-positivos, 63 montos atípicos, 15 posibles duplicados). Las 509 filas restantes quedaron en
-la bitácora con su motivo: 294 por tipo desconocido, 160 por monto vacío y 55 por fecha
+transacciones: corrigió 374 fechas en formato legacy y marcó 166 con alguna anomalía. Las
+marcas no son excluyentes —dos filas acumulan dos— y se reparten en 90 por monto no positivo,
+63 por monto atípico y 15 por posible duplicado. Las 509 filas restantes quedaron en la
+bitácora con su motivo: 294 por tipo desconocido, 160 por monto vacío y 55 por fecha
 inexistente.
+
+El Job 3 sobre el mismo dataset migró 952 de 1.000 movimientos: las 48 omisiones son todas por
+monto vacío, el único defecto de ese archivo que no se puede corregir sin inventar el valor.
 
 Para reproducir las consultas de evidencia:
 
@@ -321,11 +334,11 @@ docker exec -i banco-xyz-db psql -U banco -d banco_xyz -f - < evidencias/consult
 ./mvnw test
 ```
 
-**95 pruebas, cobertura 96,4 % de instrucciones y 84,1 % de ramas.**
+**99 pruebas, cobertura 96,4 % de instrucciones y 84,5 % de ramas.**
 
 | Tipo | Clases | Qué cubren |
 |---|---|---|
-| Unitarias de parseo | `ParseadorFechasTest`, `ParseadorNumerosTest`, `EscritorCsvTest` | Los 4 formatos de fecha, resolución estricta, montos vacíos, escape CSV |
+| Unitarias de parseo | `ParseadorFechasTest`, `ParseadorNumerosTest`, `EscritorCsvTest` | Los 4 formatos de fecha, resolución estricta, montos vacíos, normalización de tildes, escape CSV |
 | Unitarias de negocio | `TransaccionItemProcessorTest`, `InteresItemProcessorTest`, `MovimientoAnualItemProcessorTest` | Cada regla de validación, corrección y clasificación, en éxito y en error |
 | Unitarias de infraestructura | `DetectorDeDuplicadosTest`, `PoliticaOmisionBancariaTest`, `LanzadorDeJobsTest` | Reproceso vs duplicado, qué se omite y qué detiene, argumentos y códigos de salida |
 | Entidades | `EntidadesDestinoTest` | Accesores, identidad (`equals`/`hashCode`) y recorte de campos |

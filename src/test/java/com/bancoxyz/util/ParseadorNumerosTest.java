@@ -43,4 +43,22 @@ class ParseadorNumerosTest {
         assertThat(ParseadorNumeros.normalizarTexto("  DEBITO ")).isEqualTo("debito");
         assertThat(ParseadorNumeros.normalizarTexto(null)).isEmpty();
     }
+
+    @Test
+    @DisplayName("Quita las tildes: 'deposito' con y sin tilde son el mismo tipo de movimiento")
+    void normalizaLasTildes() {
+        assertThat(ParseadorNumeros.normalizarTexto("dep\u00f3sito")).isEqualTo("deposito");
+        assertThat(ParseadorNumeros.normalizarTexto(" DEP\u00d3SITO ")).isEqualTo("deposito");
+        assertThat(ParseadorNumeros.normalizarTexto("pr\u00e9stamo")).isEqualTo("prestamo");
+        assertThat(ParseadorNumeros.normalizarTexto("d\u00e9bito")).isEqualTo("debito");
+    }
+
+    @Test
+    @DisplayName("Detecta si el valor original traia tildes, para dejar constancia")
+    void detectaDiacriticos() {
+        assertThat(ParseadorNumeros.tieneDiacriticos("dep\u00f3sito")).isTrue();
+        assertThat(ParseadorNumeros.tieneDiacriticos("deposito")).isFalse();
+        assertThat(ParseadorNumeros.tieneDiacriticos("  DEPOSITO ")).isFalse();
+        assertThat(ParseadorNumeros.tieneDiacriticos(null)).isFalse();
+    }
 }

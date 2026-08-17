@@ -1,6 +1,7 @@
 package com.bancoxyz.util;
 
 import java.math.BigDecimal;
+import java.text.Normalizer;
 import java.util.Optional;
 
 /**
@@ -69,8 +70,30 @@ public final class ParseadorNumeros {
         }
     }
 
-    /** Normaliza un texto de catalogo: recorta espacios y lo baja a minusculas. */
+    /**
+     * Normaliza un texto de catalogo: recorta espacios, baja a minusculas y quita las
+     * tildes.
+     *
+     * <p>Quitar los diacriticos no es un detalle cosmetico. El sistema legacy escribe el
+     * mismo tipo de movimiento como {@code deposito} y como {@code deposito} con tilde
+     * segun quien cargara la fila, y sin esta normalizacion la segunda forma no calzaria
+     * con el catalogo y el movimiento se perderia del estado de cuenta. Es exactamente el
+     * tipo de inconsistencia que la migracion debe <em>corregir</em>, no descartar.</p>
+     */
     public static String normalizarTexto(String valor) {
-        return valor == null ? "" : valor.trim().toLowerCase();
+        if (valor == null) {
+            return "";
+        }
+        String limpio = valor.trim().toLowerCase();
+        return Normalizer.normalize(limpio, Normalizer.Form.NFD).replaceAll("\\p{M}", "");
+    }
+
+    /** Indica si el texto original traia tildes, para dejar constancia de la correccion. */
+    public static boolean tieneDiacriticos(String valor) {
+        if (valor == null) {
+            return false;
+        }
+        String limpio = valor.trim().toLowerCase();
+        return !limpio.equals(normalizarTexto(valor));
     }
 }

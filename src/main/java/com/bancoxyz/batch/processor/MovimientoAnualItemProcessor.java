@@ -58,6 +58,10 @@ public class MovimientoAnualItemProcessor implements ItemProcessor<MovimientoAnu
         if (!Constantes.TIPOS_MOVIMIENTO.contains(tipo)) {
             throw new DatoInvalidoException(Constantes.MSG_TIPO_INVALIDO + "'" + tipo + "'", crudo);
         }
+        // El archivo legacy escribe el mismo movimiento con y sin tilde: se corrige y se anota.
+        if (ParseadorNumeros.tieneDiacriticos(fila.getTransaccion())) {
+            observaciones.add(Constantes.MSG_TIPO_NORMALIZADO + "'" + fila.getTransaccion().trim() + "'");
+        }
 
         BigDecimal montoOriginal = ParseadorNumeros.parsearMonto(fila.getMonto())
                 .orElseThrow(() -> new DatoInvalidoException(Constantes.MSG_MONTO_INVALIDO

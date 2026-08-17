@@ -1,0 +1,76 @@
+
+  +--------------------------------------------------------------+
+  |                                                              |
+  |          B A N C O   X Y Z   -   M I G R A C I O N           |
+  |               de procesos batch legacy a Spring Batch        |
+  |                                                              |
+  +--------------------------------------------------------------+
+  Spring Boot  (v3.5.16)
+  Desarrollo Backend III (PBY2203) :: Duoc UC
+
+
+01:52:26 INFO  Starting BancoXyzBatchApplication v1.0.0 using Java 21.0.11 with PID 41097 (/Users/diegocarvajalarias/Desktop/Cursos/Duoc/17-Desarrollo Backend III/Semana 01/banco-xyz-batch/target/banco-xyz-batch-1.0.0.jar started by diegocarvajalarias in /Users/diegocarvajalarias/Desktop/Cursos/Duoc/17-Desarrollo Backend III/Semana 01/banco-xyz-batch)
+01:52:26 INFO  No active profile set, falling back to 1 default profile: "default"
+01:52:26 INFO  Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+01:52:26 INFO  Finished Spring Data repository scanning in 18 ms. Found 6 JPA repository interfaces.
+01:52:26 INFO  HikariPool-1 - Starting...
+01:52:26 INFO  HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3650d4fc
+01:52:26 INFO  HikariPool-1 - Start completed.
+01:52:26 INFO  No LoadTimeWeaver setup: ignoring JPA class transformer
+01:52:27 INFO  Initialized JPA EntityManagerFactory for persistence unit 'default'
+01:52:27 INFO  Started BancoXyzBatchApplication in 1.342 seconds (process running for 1.514)
+01:52:27 INFO  
+01:52:27 INFO  ========================================================================================================
+01:52:27 INFO    BANCO XYZ | MIGRACION BATCH -> migracionCompletaJob
+01:52:27 INFO    Parametros: carpetaEntrada=data/semana_2, carpetaSalida=salida, ejecucion=2026-08-17T01:52:27.240780
+01:52:27 INFO  ========================================================================================================
+01:52:27 INFO  Executing step: [procesarTransaccionesStep]
+01:52:27 INFO  Executing step: [procesarMovimientosAnualesStep]
+01:52:27 INFO  Executing step: [procesarInteresesStep]
+01:52:27 INFO  Step: [procesarMovimientosAnualesStep] executed in 59ms
+01:52:27 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:4 -> Tipo fuera del catalogo permitido: '-1' | 103,Bob Johnson,12000,,-1
+01:52:27 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:5 -> Monto vacio o no numerico: '' | 4,2024-01-03,,debito
+01:52:27 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:11 -> Tipo fuera del catalogo permitido: 'invalid' | 10,2024-01-08,1000,invalid
+01:52:27 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:5 -> Saldo vacio o no numerico: '' | 104,Alice Brown,,45,ahorro
+01:52:27 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:9 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 108,Steve Rogers,10000,100,ahorro
+01:52:27 INFO  Step: [procesarTransaccionesStep] executed in 68ms
+01:52:27 INFO  Step: [procesarInteresesStep] executed in 71ms
+01:52:27 INFO  Executing step: [compilarEstadosCuentaStep]
+01:52:27 INFO  Executing step: [generarResumenDiarioStep]
+01:52:27 INFO  Executing step: [generarResumenInteresesStep]
+01:52:27 INFO  Archivo de salida generado: salida/intereses_mensuales.csv
+01:52:27 INFO  Interes liquidado: 5 cuentas, total 458.00
+01:52:27 INFO     - ahorro: 2 cuentas, interes 50.00
+01:52:27 INFO     - prestamo: 2 cuentas, interes 345.00
+01:52:27 INFO     - hipoteca: 1 cuentas, interes 63.00
+01:52:27 INFO  Archivo de salida generado: salida/estados_cuenta_anuales.csv
+01:52:27 INFO  Archivo de salida generado: salida/reporte_transacciones_diarias.csv
+01:52:27 INFO  Estados de cuenta compilados: 8 combinaciones cuenta/ano, 9 movimientos
+01:52:27 INFO  Reporte diario compilado: 7 dias, 8 transacciones, 3 anomalias
+01:52:27 INFO  Step: [generarResumenInteresesStep] executed in 48ms
+01:52:27 INFO  Step: [compilarEstadosCuentaStep] executed in 64ms
+01:52:27 INFO  Step: [generarResumenDiarioStep] executed in 54ms
+01:52:27 INFO  Executing step: [exportarRechazadosStep]
+01:52:27 INFO  Bitacora de rechazos exportada: 5 registros en salida/rechazados_migracionCompleta.csv
+01:52:27 INFO  Step: [exportarRechazadosStep] executed in 6ms
+01:52:27 INFO  
+01:52:27 INFO  ========================================================================================================
+01:52:27 INFO    RESUMEN DE EJECUCION -> migracionCompletaJob
+01:52:27 INFO    jobExecutionId=4  estado=COMPLETED  duracion=292 ms
+01:52:27 INFO  --------------------------------------------------------------------------------------------------------
+01:52:27 INFO    STEP                                 LEIDOS  ESCRITOS  OMITIDOS  FILTRADOS  ROLLBACKS  ESTADO
+01:52:27 INFO    procesarTransaccionesStep                10         8         2          0          2  COMPLETED
+01:52:27 INFO    procesarInteresesStep                     8         5         3          0          3  COMPLETED
+01:52:27 INFO    procesarMovimientosAnualesStep            9         9         0          0          0  COMPLETED
+01:52:27 INFO    compilarEstadosCuentaStep                 0         8         0          0          0  COMPLETED
+01:52:27 INFO    generarResumenDiarioStep                  0         7         0          0          0  COMPLETED
+01:52:27 INFO    generarResumenInteresesStep               0         5         0          0          0  COMPLETED
+01:52:27 INFO    exportarRechazadosStep                    0         5         0          0          0  COMPLETED
+01:52:27 INFO  --------------------------------------------------------------------------------------------------------
+01:52:27 INFO    Bitacora de rechazos: 5 registros (omitidos por excepcion=5, filtrados por duplicado=0)
+01:52:27 INFO  ========================================================================================================
+01:52:27 INFO  
+01:52:27 INFO  Job 'migracionCompletaJob' finalizado con estado COMPLETED
+01:52:27 INFO  Closing JPA EntityManagerFactory for persistence unit 'default'
+01:52:27 INFO  HikariPool-1 - Shutdown initiated...
+01:52:27 INFO  HikariPool-1 - Shutdown completed.

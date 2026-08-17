@@ -1,0 +1,112 @@
+ ejecucion |              job               |  estado   |  salida   |  inicio  |  ms  
+-----------+--------------------------------+-----------+-----------+----------+------
+         1 | reporteTransaccionesDiariasJob | COMPLETED | COMPLETED | 01:52:21 |  266
+         2 | calculoInteresesMensualesJob   | COMPLETED | COMPLETED | 01:52:23 |  217
+         3 | estadosCuentaAnualesJob        | COMPLETED | COMPLETED | 01:52:25 |  256
+         4 | migracionCompletaJob           | COMPLETED | COMPLETED | 01:52:27 |  292
+         5 | migracionCompletaJob           | COMPLETED | COMPLETED | 01:52:29 | 1263
+         6 | reporteTransaccionesDiariasJob | COMPLETED | COMPLETED | 01:52:32 |  195
+(6 rows)
+
+ id |              step              | leidos | escritos | omitidos | filtrados | rollbacks |  estado   
+----+--------------------------------+--------+----------+----------+-----------+-----------+-----------
+  1 | procesarTransaccionesStep      |     10 |       10 |        0 |         0 |         0 | COMPLETED
+  2 | generarResumenDiarioStep       |      0 |        8 |        0 |         0 |         0 | COMPLETED
+  3 | exportarRechazadosStep         |      0 |        0 |        0 |         0 |         0 | COMPLETED
+  4 | procesarInteresesStep          |      8 |        8 |        0 |         0 |         0 | COMPLETED
+  5 | generarResumenInteresesStep    |      0 |        8 |        0 |         0 |         0 | COMPLETED
+  6 | exportarRechazadosStep         |      0 |        0 |        0 |         0 |         0 | COMPLETED
+  7 | procesarMovimientosAnualesStep |      9 |        9 |        0 |         0 |         0 | COMPLETED
+  8 | compilarEstadosCuentaStep      |      0 |        8 |        0 |         0 |         0 | COMPLETED
+  9 | exportarRechazadosStep         |      0 |        0 |        0 |         0 |         0 | COMPLETED
+ 10 | procesarTransaccionesStep      |     10 |        8 |        2 |         0 |         2 | COMPLETED
+ 11 | procesarInteresesStep          |      8 |        5 |        3 |         0 |         3 | COMPLETED
+ 12 | procesarMovimientosAnualesStep |      9 |        9 |        0 |         0 |         0 | COMPLETED
+ 13 | compilarEstadosCuentaStep      |      0 |        8 |        0 |         0 |         0 | COMPLETED
+ 14 | generarResumenDiarioStep       |      0 |        7 |        0 |         0 |         0 | COMPLETED
+ 15 | generarResumenInteresesStep    |      0 |        5 |        0 |         0 |         0 | COMPLETED
+ 16 | exportarRechazadosStep         |      0 |        5 |        0 |         0 |         0 | COMPLETED
+ 17 | procesarInteresesStep          |   1000 |      327 |      664 |         9 |       664 | COMPLETED
+ 18 | procesarTransaccionesStep      |   1000 |      491 |      509 |         0 |       509 | COMPLETED
+ 19 | procesarMovimientosAnualesStep |   1000 |      952 |       48 |         0 |        48 | COMPLETED
+ 20 | compilarEstadosCuentaStep      |      0 |       20 |        0 |         0 |         0 | COMPLETED
+ 21 | generarResumenDiarioStep       |      0 |      267 |        0 |         0 |         0 | COMPLETED
+ 22 | generarResumenInteresesStep    |      0 |      327 |        0 |         0 |         0 | COMPLETED
+ 23 | exportarRechazadosStep         |      0 |     1230 |        0 |         0 |         0 | COMPLETED
+ 24 | procesarTransaccionesStep      |     10 |       10 |        0 |         0 |         1 | COMPLETED
+ 25 | generarResumenDiarioStep       |      0 |        8 |        0 |         0 |         0 | COMPLETED
+ 26 | exportarRechazadosStep         |      0 |        0 |        0 |         0 |         0 | COMPLETED
+(26 rows)
+
+        tabla        | filas 
+---------------------+-------
+ cuenta_interes      |   340
+ estado_cuenta_anual |    36
+ movimiento_anual    |   970
+ registro_rechazado  |  1235
+ resumen_diario      |   290
+ transaccion         |   519
+(6 rows)
+
+   fecha    | cantidad_transacciones | total_debitos | total_creditos | saldo_neto | monto_maximo | cantidad_anomalias 
+------------+------------------------+---------------+----------------+------------+--------------+--------------------
+ 2024-01-01 |                      1 |       1000.00 |           0.00 |   -1000.00 |      1000.00 |                  0
+ 2024-01-02 |                      1 |          0.00 |        1500.00 |    1500.00 |      1500.00 |                  0
+ 2024-01-03 |                      2 |          0.00 |           0.00 |       0.00 |         0.00 |                  2
+ 2024-01-04 |                      1 |          0.00 |         800.00 |     800.00 |       800.00 |                  0
+ 2024-01-05 |                      2 |       1400.00 |           0.00 |   -1400.00 |       700.00 |                  1
+ 2024-01-06 |                      1 |          0.00 |        1200.00 |    1200.00 |      1200.00 |                  0
+ 2024-01-07 |                      1 |       3000.00 |           0.00 |   -3000.00 |      3000.00 |                  1
+ 2024-01-08 |                      1 |          0.00 |        1000.00 |    1000.00 |      1000.00 |                  0
+(8 rows)
+
+ cuenta_id |    nombre     |   tipo   | edad | saldo_inicial | tasa_mensual | interes | saldo_final | anomalia 
+-----------+---------------+----------+------+---------------+--------------+---------+-------------+----------
+       101 | John Doe      | ahorro   |   30 |       5000.00 |      0.00500 |   25.00 |     5025.00 | f
+       102 | Jane Smith    | prestamo |   25 |       8000.00 |      0.01500 |  120.00 |     8120.00 | f
+       103 | Bob Johnson   | prestamo |   30 |      12000.00 |      0.01500 |  180.00 |    12180.00 | f
+       104 | Alice Brown   | ahorro   |   45 |          0.00 |      0.00500 |    0.00 |        0.00 | t
+       105 | Charlie Green | hipoteca |   35 |       7000.00 |      0.00900 |   63.00 |     7063.00 | f
+       106 | John Doe      | ahorro   |   30 |       5000.00 |      0.00500 |   25.00 |     5025.00 | t
+       107 | Diana Prince  | prestamo |   40 |      15000.00 |      0.01500 |  225.00 |    15225.00 | f
+       108 | Steve Rogers  | ahorro   |   80 |      10000.00 |      0.00600 |   60.00 |    10060.00 | f
+(8 rows)
+
+ cuenta_id | anio | cantidad_movimientos | total_depositos | total_cargos | saldo_neto | primera_fecha | ultima_fecha | movimientos_con_anomalia 
+-----------+------+----------------------+-----------------+--------------+------------+---------------+--------------+--------------------------
+       101 | 2024 |                    2 |         1000.00 |       500.00 |     500.00 | 2024-01-01    | 2024-03-15   |                        0
+       102 | 2024 |                    1 |         1500.00 |         0.00 |    1500.00 | 2024-05-22    | 2024-05-22   |                        0
+       103 | 2024 |                    1 |         2000.00 |         0.00 |    2000.00 | 2024-07-10    | 2024-07-10   |                        0
+       104 | 2024 |                    1 |            0.00 |       100.00 |    -100.00 | 2024-09-05    | 2024-09-05   |                        0
+       105 | 2024 |                    1 |         2500.00 |         0.00 |    2500.00 | 2024-10-01    | 2024-10-01   |                        0
+       106 | 2024 |                    1 |         3000.00 |         0.00 |    3000.00 | 2024-11-20    | 2024-11-20   |                        0
+       107 | 2024 |                    1 |            0.00 |         0.00 |       0.00 | 2024-12-25    | 2024-12-25   |                        1
+       108 | 2024 |                    1 |         2000.00 |         0.00 |    2000.00 | 2024-12-31    | 2024-12-31   |                        0
+(8 rows)
+
+      archivo      | linea | clasificacion |                           motivo                            |             contenido             
+-------------------+-------+---------------+-------------------------------------------------------------+-----------------------------------
+ intereses.csv     |     4 | OMITIDO       | Tipo fuera del catalogo permitido: '-1'                     | 103,Bob Johnson,12000,,-1
+ intereses.csv     |     5 | OMITIDO       | Saldo vacio o no numerico: ''                               | 104,Alice Brown,,45,ahorro
+ intereses.csv     |     9 | OMITIDO       | Edad fuera del rango permitido: 100 (rango permitido 18-99) | 108,Steve Rogers,10000,100,ahorro
+ transacciones.csv |     5 | OMITIDO       | Monto vacio o no numerico: ''                               | 4,2024-01-03,,debito
+ transacciones.csv |    11 | OMITIDO       | Tipo fuera del catalogo permitido: 'invalid'                | 10,2024-01-08,1000,invalid
+(5 rows)
+
+ migradas | con_anomalia | fecha_corregida | monto_no_positivo | monto_atipico | posible_duplicado 
+----------+--------------+-----------------+-------------------+---------------+-------------------
+      491 |          166 |             374 |                90 |            63 |                15
+(1 row)
+
+       archivo       |                       motivo                       | casos 
+---------------------+----------------------------------------------------+-------
+ cuentas_anuales.csv | Monto vacio o no numerico                          |    48
+ intereses.csv       | Tipo fuera del catalogo permitido                  |   326
+ intereses.csv       | Edad fuera del rango permitido                     |   197
+ intereses.csv       | Saldo vacio o no numerico                          |   141
+ intereses.csv       | Registro duplicado, ya procesado en esta ejecucion |     9
+ transacciones.csv   | Tipo fuera del catalogo permitido                  |   294
+ transacciones.csv   | Monto vacio o no numerico                          |   160
+ transacciones.csv   | Fecha ilegible o inexistente                       |    55
+(8 rows)
+

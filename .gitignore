@@ -15,5 +15,6 @@ target/
 # Sistema operativo
 .DS_Store
 
-# Logs
+# Logs de build (la evidencia de ejecucion SI se versiona: es entregable de la actividad)
 *.log
+!evidencias/logs/*.log

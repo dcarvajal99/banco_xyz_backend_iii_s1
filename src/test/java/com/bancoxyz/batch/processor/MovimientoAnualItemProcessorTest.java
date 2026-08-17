@@ -113,6 +113,28 @@ class MovimientoAnualItemProcessorTest {
     }
 
     @Test
+    @DisplayName("Un 'deposito' escrito con tilde se corrige y se migra, no se descarta")
+    void normalizaElTipoConTilde() {
+        MovimientoAnual movimiento = procesador.process(
+                fila(2, "111", "2024-09-25", "dep\u00f3sito", "2000", "Ingreso navideno"));
+
+        assertThat(movimiento.getTipoTransaccion()).isEqualTo("deposito");
+        assertThat(movimiento.getMonto()).isEqualByComparingTo("2000.00");
+        assertThat(movimiento.getObservacion()).contains(Constantes.MSG_TIPO_NORMALIZADO);
+        assertThat(movimiento.isAnomalia()).isFalse();
+    }
+
+    @Test
+    @DisplayName("Un tipo sin tilde no genera la observacion de normalizacion")
+    void noAnotaNormalizacionSiNoHabiaTilde() {
+        MovimientoAnual movimiento = procesador.process(
+                fila(2, "111", "2024-09-25", "DEPOSITO", "2000", "Ingreso navideno"));
+
+        assertThat(movimiento.getTipoTransaccion()).isEqualTo("deposito");
+        assertThat(movimiento.getObservacion()).isNull();
+    }
+
+    @Test
     @DisplayName("Tipo de movimiento fuera del catalogo: se rechaza")
     void rechazaTipoDesconocido() {
         assertThatThrownBy(() -> procesador.process(

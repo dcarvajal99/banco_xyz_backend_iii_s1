@@ -94,5 +94,6 @@ public final class Constantes {
     public static final String MSG_TITULAR_REPETIDO = "Titular repetido con los mismos datos en otra cuenta";
     public static final String MSG_CUENTA_REPETIDA = "La cuenta aparece mas de una vez en el archivo con datos distintos";
     public static final String MSG_SIGNO_CORREGIDO = "Signo del monto corregido segun el tipo de movimiento";
+    public static final String MSG_TIPO_NORMALIZADO = "Tipo normalizado desde la escritura con tilde del archivo legacy: ";
     public static final String MSG_DESCRIPCION_COMPLETADA = "Descripcion vacia completada por el proceso";
 }

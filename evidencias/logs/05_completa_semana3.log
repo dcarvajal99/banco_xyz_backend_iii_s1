@@ -1,0 +1,1301 @@
+
+  +--------------------------------------------------------------+
+  |                                                              |
+  |          B A N C O   X Y Z   -   M I G R A C I O N           |
+  |               de procesos batch legacy a Spring Batch        |
+  |                                                              |
+  +--------------------------------------------------------------+
+  Spring Boot  (v3.5.16)
+  Desarrollo Backend III (PBY2203) :: Duoc UC
+
+
+01:52:27 INFO  Starting BancoXyzBatchApplication v1.0.0 using Java 21.0.11 with PID 41101 (/Users/diegocarvajalarias/Desktop/Cursos/Duoc/17-Desarrollo Backend III/Semana 01/banco-xyz-batch/target/banco-xyz-batch-1.0.0.jar started by diegocarvajalarias in /Users/diegocarvajalarias/Desktop/Cursos/Duoc/17-Desarrollo Backend III/Semana 01/banco-xyz-batch)
+01:52:27 INFO  No active profile set, falling back to 1 default profile: "default"
+01:52:28 INFO  Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+01:52:28 INFO  Finished Spring Data repository scanning in 18 ms. Found 6 JPA repository interfaces.
+01:52:28 INFO  HikariPool-1 - Starting...
+01:52:28 INFO  HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3650d4fc
+01:52:28 INFO  HikariPool-1 - Start completed.
+01:52:28 INFO  No LoadTimeWeaver setup: ignoring JPA class transformer
+01:52:28 INFO  Initialized JPA EntityManagerFactory for persistence unit 'default'
+01:52:29 INFO  Started BancoXyzBatchApplication in 1.334 seconds (process running for 1.506)
+01:52:29 INFO  
+01:52:29 INFO  ========================================================================================================
+01:52:29 INFO    BANCO XYZ | MIGRACION BATCH -> migracionCompletaJob
+01:52:29 INFO    Parametros: carpetaEntrada=data/semana_3, carpetaSalida=salida, ejecucion=2026-08-17T01:52:29.118054
+01:52:29 INFO  ========================================================================================================
+01:52:29 INFO  Executing step: [procesarInteresesStep]
+01:52:29 INFO  Executing step: [procesarMovimientosAnualesStep]
+01:52:29 INFO  Executing step: [procesarTransaccionesStep]
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:2 -> Edad fuera del rango permitido: '' | 137,Bob Johnson,7000,,prestamo
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:6 -> Monto vacio o no numerico: '' | 120,2024/04/11,compra,,Ingreso mensual
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:4 -> Tipo fuera del catalogo permitido: 'invalid' | 3,2024-04-09,800,invalid
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:5 -> Monto vacio o no numerico: '' | 4,04/05/2024,,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:3 -> Tipo fuera del catalogo permitido: '-1' | 114,Unknown,,30,-1
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:53 -> Monto vacio o no numerico: '' | 102,2024/11/05,retiro,,Ingreso navideño
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:8 -> Fecha ilegible o inexistente: 2024-13-01 | 7,2024-13-01,700,debito
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:10 -> Tipo fuera del catalogo permitido: 'invalid' | 9,07-04-2024,3000,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:4 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 133,Alice Brown,12000,100,hipoteca
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:70 -> Monto vacio o no numerico: '' | 104,2024/07/31,deposito,,Compra en tienda
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:11 -> Tipo fuera del catalogo permitido: 'invalid' | 10,2024/10/15,1500,invalid
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:72 -> Monto vacio o no numerico: '' | 117,2024-01-12,retiro,,Ingreso extra
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:7 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 108,Jane Smith,12000,100,prestamo
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:9 -> Tipo fuera del catalogo permitido: '-1' | 138,Steve Rogers,10000,25,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:16 -> Monto vacio o no numerico: '' | 15,01/06/2024,,desconocido
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:98 -> Monto vacio o no numerico: '' | 117,2024-05-18,deposito,,Ingreso mensual
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:10 -> Saldo vacio o no numerico: '' | 113,Charlie Green,,35,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:17 -> Tipo fuera del catalogo permitido: 'invalid' | 16,2024-04-27,1000,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:12 -> Tipo fuera del catalogo permitido: '-1' | 102,Alice Brown,12000,45,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:18 -> Tipo fuera del catalogo permitido: 'invalid' | 17,18/12/2024,-200,invalid
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:23 -> Tipo fuera del catalogo permitido: 'invalid' | 22,2024/06/05,1000,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:15 -> Edad fuera del rango permitido: 150 (rango permitido 18-99) | 145,Charlie Green,8000,150,ahorro
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:17 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 117,Steve Rogers,12000,100,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:24 -> Fecha ilegible o inexistente: 2024-13-01 | 23,2024-13-01,1000,credito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:18 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 128,Diana Prince,7000,100,prestamo
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:26 -> Monto vacio o no numerico: '' | 25,09/11/2024,,debito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:19 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 147,Alice Brown,8000,100,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:29 -> Monto vacio o no numerico: '' | 28,2024-09-03,,desconocido
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:20 -> Edad fuera del rango permitido: '' | 148,John Doe,7000,,prestamo
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:30 -> Monto vacio o no numerico: '' | 29,27-05-2024,,debito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:21 -> Tipo fuera del catalogo permitido: '-1' | 142,Steve Rogers,5000,,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:31 -> Tipo fuera del catalogo permitido: 'invalid' | 30,09/02/2024,-200,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:23 -> Tipo fuera del catalogo permitido: '-1' | 103,Jane Smith,8000,30,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:32 -> Tipo fuera del catalogo permitido: 'invalid' | 31,2024/04/11,800,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:24 -> Tipo fuera del catalogo permitido: '-1' | 110,Unknown,5000,35,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:33 -> Tipo fuera del catalogo permitido: 'invalid' | 32,2024/01/01,1500,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:25 -> Edad fuera del rango permitido: '' | 111,Diana Prince,10000,,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:40 -> Tipo fuera del catalogo permitido: 'invalid' | 39,18/11/2024,1200,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:26 -> Tipo fuera del catalogo permitido: '-1' | 136,Charlie Green,8000,100,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:41 -> Fecha ilegible o inexistente: 2024-13-01 | 40,2024-13-01,3000,credito
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:127 -> Monto vacio o no numerico: '' | 103,2024-07-12,deposito,,
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:27 -> Saldo vacio o no numerico: '' | 146,Steve Rogers,,30,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:44 -> Tipo fuera del catalogo permitido: 'invalid' | 43,2024-12-06,-100,invalid
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:137 -> Monto vacio o no numerico: '' | 114,2024/10/16,retiro,,Ingreso mensual
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:28 -> Tipo fuera del catalogo permitido: '-1' | 134,Charlie Green,8000,150,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:46 -> Monto vacio o no numerico: '' | 45,23/08/2024,,credito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:30 -> Saldo vacio o no numerico: '' | 107,Alice Brown,,25,prestamo
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:48 -> Tipo fuera del catalogo permitido: 'invalid' | 47,30-11-2024,1200,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:32 -> Tipo fuera del catalogo permitido: 'unknown' | 103,Jane Smith,7000,40,unknown
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:51 -> Fecha ilegible o inexistente: 2024-13-01 | 50,2024-13-01,1200,debito
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:53 -> Tipo fuera del catalogo permitido: 'invalid' | 52,16/03/2024,1000,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:33 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 110,Jane Smith,8000,100,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:54 -> Monto vacio o no numerico: '' | 53,02/07/2024,,debito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:34 -> Saldo vacio o no numerico: '' | 116,Diana Prince,,,prestamo
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:55 -> Tipo fuera del catalogo permitido: 'desconocido' | 54,21-02-2024,800,desconocido
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:36 -> Edad fuera del rango permitido: '' | 141,Unknown,7000,,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:58 -> Tipo fuera del catalogo permitido: 'invalid' | 57,27/07/2024,-200,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:37 -> Tipo fuera del catalogo permitido: '-1' | 120,John Doe,,,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:61 -> Tipo fuera del catalogo permitido: 'invalid' | 60,2024-04-04,-200,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:39 -> Tipo fuera del catalogo permitido: '-1' | 140,John Doe,,45,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:66 -> Monto vacio o no numerico: '' | 65,16/10/2024,,debito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:40 -> Saldo vacio o no numerico: '' | 107,Diana Prince,,25,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:67 -> Tipo fuera del catalogo permitido: 'invalid' | 66,2024-05-28,1500,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:43 -> Saldo vacio o no numerico: '' | 150,Charlie Green,,40,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:69 -> Tipo fuera del catalogo permitido: 'desconocido' | 68,2024-01-11,3000,desconocido
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:44 -> Saldo vacio o no numerico: '' | 137,Steve Rogers,,35,prestamo
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:70 -> Tipo fuera del catalogo permitido: 'invalid' | 69,29/09/2024,1500,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:45 -> Tipo fuera del catalogo permitido: '-1' | 126,Jane Smith,5000,25,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:71 -> Monto vacio o no numerico: '' | 70,2024/09/18,,desconocido
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:48 -> Tipo fuera del catalogo permitido: '-1' | 104,Steve Rogers,8000,45,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:73 -> Tipo fuera del catalogo permitido: 'invalid' | 72,2024-03-01,-200,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:49 -> Saldo vacio o no numerico: '' | 143,Charlie Green,,150,hipoteca
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:228 -> Monto vacio o no numerico: '' | 107,21-03-2024,deposito,,Compra en tienda
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:75 -> Tipo fuera del catalogo permitido: 'invalid' | 74,30/07/2024,1000,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:50 -> Tipo fuera del catalogo permitido: '-1' | 133,Steve Rogers,,100,-1
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:246 -> Monto vacio o no numerico: '' | 107,08/12/2024,compra,,Retiro parcial
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:78 -> Fecha ilegible o inexistente: 2024-13-01 | 77,2024-13-01,3000,invalid
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:249 -> Monto vacio o no numerico: '' | 106,19/10/2024,deposito,,
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:51 -> Tipo fuera del catalogo permitido: '-1' | 121,Alice Brown,12000,100,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:80 -> Monto vacio o no numerico: '' | 79,02/06/2024,,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:53 -> Edad fuera del rango permitido: 150 (rango permitido 18-99) | 104,Jane Smith,12000,150,ahorro
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:256 -> Monto vacio o no numerico: '' | 105,2024-08-11,deposito,,Compra en tienda
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:81 -> Tipo fuera del catalogo permitido: 'invalid' | 80,16-04-2024,1200,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:54 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 127,John Doe,5000,100,hipoteca
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:271 -> Monto vacio o no numerico: '' | 108,2024-09-29,deposito,,Ingreso extra
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:82 -> Monto vacio o no numerico: '' | 81,2024/06/18,,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:56 -> Edad fuera del rango permitido: '' | 123,Diana Prince,7000,,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:87 -> Tipo fuera del catalogo permitido: 'invalid' | 86,2024-11-04,1500,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:57 -> Tipo fuera del catalogo permitido: '-1' | 138,Alice Brown,5000,,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:88 -> Tipo fuera del catalogo permitido: 'invalid' | 87,2024/10/22,1200,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:58 -> Edad fuera del rango permitido: '' | 121,Steve Rogers,8000,,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:91 -> Tipo fuera del catalogo permitido: 'invalid' | 90,28/07/2024,700,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:59 -> Edad fuera del rango permitido: 150 (rango permitido 18-99) | 107,Charlie Green,10000,150,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:99 -> Tipo fuera del catalogo permitido: 'invalid' | 98,2024-07-05,1200,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:60 -> Tipo fuera del catalogo permitido: '-1' | 119,John Doe,10000,100,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:101 -> Monto vacio o no numerico: '' | 100,15-06-2024,,debito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:62 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 132,Jane Smith,10000,100,hipoteca
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:63 -> Edad fuera del rango permitido: '' | 137,Bob Johnson,8000,,ahorro
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:64 -> Saldo vacio o no numerico: '' | 139,Bob Johnson,,35,prestamo
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:65 -> Edad fuera del rango permitido: '' | 102,Alice Brown,8000,,ahorro
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:67 -> Saldo vacio o no numerico: '' | 141,Bob Johnson,,,ahorro
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:68 -> Tipo fuera del catalogo permitido: '-1' | 140,Bob Johnson,8000,40,-1
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:69 -> Edad fuera del rango permitido: '' | 126,Alice Brown,12000,,prestamo
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:71 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 123,John Doe,12000,100,prestamo
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:318 -> Monto vacio o no numerico: '' | 119,2024/02/29,compra,,Ingreso mensual
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:74 -> Tipo fuera del catalogo permitido: '-1' | 107,Diana Prince,,25,-1
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:363 -> Monto vacio o no numerico: '' | 105,17/12/2024,retiro,,Retiro parcial
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:75 -> Edad fuera del rango permitido: '' | 107,Unknown,5000,,ahorro
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:371 -> Monto vacio o no numerico: '' | 104,2024-07-17,compra,,Retiro parcial
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:76 -> Tipo fuera del catalogo permitido: '-1' | 120,Bob Johnson,,40,-1
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:374 -> Monto vacio o no numerico: '' | 111,04/05/2024,deposito,,Ingreso navideño
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:77 -> Tipo fuera del catalogo permitido: '-1' | 111,Charlie Green,12000,40,-1
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:379 -> Monto vacio o no numerico: '' | 117,01-11-2024,deposito,,
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:79 -> Saldo vacio o no numerico: '' | 120,Unknown,,40,prestamo
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:382 -> Monto vacio o no numerico: '' | 120,2024-07-26,retiro,,Ingreso mensual
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:81 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 137,Alice Brown,8000,100,hipoteca
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:385 -> Monto vacio o no numerico: '' | 102,2024/08/30,retiro,,Ingreso navideño
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:82 -> Tipo fuera del catalogo permitido: '-1' | 119,Bob Johnson,10000,25,-1
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:396 -> Monto vacio o no numerico: '' | 107,15-06-2024,compra,,
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:83 -> Tipo fuera del catalogo permitido: '-1' | 136,Charlie Green,10000,35,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:106 -> Tipo fuera del catalogo permitido: 'invalid' | 105,2024-12-13,3000,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:84 -> Tipo fuera del catalogo permitido: '-1' | 130,Charlie Green,,25,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:108 -> Tipo fuera del catalogo permitido: 'invalid' | 107,16/01/2024,700,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:85 -> Tipo fuera del catalogo permitido: '-1' | 137,John Doe,,40,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:109 -> Tipo fuera del catalogo permitido: 'invalid' | 108,2024/02/28,-200,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:86 -> Tipo fuera del catalogo permitido: '-1' | 102,Bob Johnson,8000,45,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:110 -> Tipo fuera del catalogo permitido: 'invalid' | 109,2024-09-15,1200,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:87 -> Tipo fuera del catalogo permitido: '-1' | 114,Charlie Green,10000,,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:115 -> Tipo fuera del catalogo permitido: 'invalid' | 114,01-02-2024,700,invalid
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:117 -> Tipo fuera del catalogo permitido: 'invalid' | 116,2024-10-03,1500,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:88 -> Edad fuera del rango permitido: '' | 112,Steve Rogers,10000,,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:119 -> Monto vacio o no numerico: '' | 118,27/08/2024,,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:89 -> Tipo fuera del catalogo permitido: '-1' | 140,Jane Smith,,35,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:120 -> Monto vacio o no numerico: '' | 119,06-12-2024,,debito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:90 -> Tipo fuera del catalogo permitido: '-1' | 110,Charlie Green,7000,25,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:123 -> Tipo fuera del catalogo permitido: 'invalid' | 122,2024-08-26,800,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:94 -> Edad fuera del rango permitido: '' | 149,Bob Johnson,8000,,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:125 -> Monto vacio o no numerico: '' | 124,2024/08/22,,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:97 -> Tipo fuera del catalogo permitido: '-1' | 122,Bob Johnson,,100,-1
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:409 -> Monto vacio o no numerico: '' | 114,2024-03-16,compra,,Retiro parcial
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:128 -> Tipo fuera del catalogo permitido: 'invalid' | 127,2024-04-09,700,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:98 -> Edad fuera del rango permitido: '' | 102,Jane Smith,7000,,prestamo
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:439 -> Monto vacio o no numerico: '' | 118,09/06/2024,retiro,,Ingreso navideño
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:129 -> Tipo fuera del catalogo permitido: 'invalid' | 128,2024-07-26,1500,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:99 -> Edad fuera del rango permitido: 150 (rango permitido 18-99) | 138,John Doe,12000,150,prestamo
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:472 -> Monto vacio o no numerico: '' | 116,2024/03/10,retiro,,Ingreso mensual
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:130 -> Tipo fuera del catalogo permitido: 'invalid' | 129,14-11-2024,700,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:101 -> Tipo fuera del catalogo permitido: 'unknown' | 139,Alice Brown,5000,100,unknown
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:491 -> Monto vacio o no numerico: '' | 104,31/05/2024,retiro,,
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:133 -> Tipo fuera del catalogo permitido: 'invalid' | 132,2024-12-10,0,invalid
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:134 -> Tipo fuera del catalogo permitido: 'invalid' | 133,21-07-2024,500,invalid
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:136 -> Monto vacio o no numerico: '' | 135,02/03/2024,,debito
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:137 -> Tipo fuera del catalogo permitido: 'invalid' | 136,2024/10/27,0,invalid
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:138 -> Tipo fuera del catalogo permitido: 'desconocido' | 137,17-06-2024,1200,desconocido
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:139 -> Fecha ilegible o inexistente: 2024-13-01 | 138,2024-13-01,1000,invalid
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:147 -> Monto vacio o no numerico: '' | 146,01-07-2024,,debito
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:149 -> Tipo fuera del catalogo permitido: 'invalid' | 148,2024-03-30,1000,invalid
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:150 -> Tipo fuera del catalogo permitido: 'desconocido' | 149,02/11/2024,3000,desconocido
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:516 -> Monto vacio o no numerico: '' | 113,13/12/2024,compra,,Ingreso navideño
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:151 -> Fecha ilegible o inexistente: 2024-13-01 | 150,2024-13-01,1500,debito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:102 -> Edad fuera del rango permitido: '' | 136,Alice Brown,10000,,ahorro
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:526 -> Monto vacio o no numerico: '' | 102,2024/12/27,retiro,,Compra en tienda
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:153 -> Tipo fuera del catalogo permitido: 'invalid' | 152,25/10/2024,1500,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:103 -> Tipo fuera del catalogo permitido: '-1' | 103,Charlie Green,8000,30,-1
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:530 -> Monto vacio o no numerico: '' | 116,04-04-2024,compra,,Ingreso navideño
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:156 -> Tipo fuera del catalogo permitido: 'desconocido' | 155,22/12/2024,-200,desconocido
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:104 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 147,Bob Johnson,7000,100,hipoteca
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:581 -> Monto vacio o no numerico: '' | 105,2024/03/11,retiro,,Ingreso navideño
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:161 -> Tipo fuera del catalogo permitido: 'invalid' | 160,03/08/2024,1500,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:105 -> Tipo fuera del catalogo permitido: '-1' | 127,Alice Brown,7000,,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:164 -> Tipo fuera del catalogo permitido: 'desconocido' | 163,30-11-2024,3000,desconocido
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:106 -> Tipo fuera del catalogo permitido: '-1' | 149,Alice Brown,10000,25,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:165 -> Tipo fuera del catalogo permitido: 'invalid' | 164,04-03-2024,3000,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:107 -> Tipo fuera del catalogo permitido: '-1' | 115,Charlie Green,8000,45,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:166 -> Tipo fuera del catalogo permitido: 'invalid' | 165,2024-08-30,1000,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:108 -> Tipo fuera del catalogo permitido: '-1' | 131,Steve Rogers,8000,150,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:168 -> Monto vacio o no numerico: '' | 167,23/02/2024,,credito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:109 -> Tipo fuera del catalogo permitido: 'unknown' | 148,Bob Johnson,,30,unknown
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:170 -> Tipo fuera del catalogo permitido: 'invalid' | 169,2024/03/05,800,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:112 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 108,Jane Smith,10000,100,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:171 -> Tipo fuera del catalogo permitido: 'invalid' | 170,2024/09/07,1200,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:114 -> Tipo fuera del catalogo permitido: 'unknown' | 113,Jane Smith,10000,,unknown
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:172 -> Monto vacio o no numerico: '' | 171,14-05-2024,,debito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:115 -> Tipo fuera del catalogo permitido: '-1' | 135,Charlie Green,12000,150,-1
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:116 -> Saldo vacio o no numerico: '' | 150,Steve Rogers,,,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:175 -> Monto vacio o no numerico: '' | 174,2024-10-26,,invalid
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:605 -> Monto vacio o no numerico: '' | 109,2024-09-03,retiro,,Ingreso navideño
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:117 -> Saldo vacio o no numerico: '' | 123,Diana Prince,,30,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:176 -> Tipo fuera del catalogo permitido: 'invalid' | 175,24-09-2024,1500,invalid
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:613 -> Monto vacio o no numerico: '' | 118,11/01/2024,retiro,,
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:118 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 146,Jane Smith,12000,100,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:177 -> Tipo fuera del catalogo permitido: 'invalid' | 176,2024-06-07,1000,invalid
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:621 -> Monto vacio o no numerico: '' | 114,2024/09/16,compra,,Ingreso extra
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:119 -> Tipo fuera del catalogo permitido: '-1' | 105,Steve Rogers,8000,25,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:181 -> Tipo fuera del catalogo permitido: 'desconocido' | 180,28/05/2024,1000,desconocido
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:645 -> Monto vacio o no numerico: '' | 107,08-05-2024,compra,,Retiro parcial
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:120 -> Tipo fuera del catalogo permitido: '-1' | 127,Diana Prince,,150,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:182 -> Tipo fuera del catalogo permitido: 'invalid' | 181,2024/09/08,800,invalid
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:649 -> Monto vacio o no numerico: '' | 112,2024/03/15,compra,,Ingreso extra
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:121 -> Tipo fuera del catalogo permitido: '-1' | 113,Charlie Green,,30,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:186 -> Fecha ilegible o inexistente: 2024-13-01 | 185,2024-13-01,1000,debito
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:667 -> Monto vacio o no numerico: '' | 113,2024/09/13,retiro,,
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:122 -> Tipo fuera del catalogo permitido: '-1' | 145,Diana Prince,,25,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:187 -> Tipo fuera del catalogo permitido: 'invalid' | 186,2024-01-04,3000,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:124 -> Saldo vacio o no numerico: '' | 142,John Doe,,35,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:190 -> Tipo fuera del catalogo permitido: 'invalid' | 189,2024-01-17,800,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:127 -> Tipo fuera del catalogo permitido: '-1' | 133,John Doe,12000,35,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:192 -> Monto vacio o no numerico: '' | 191,26-07-2024,,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:128 -> Tipo fuera del catalogo permitido: 'unknown' | 128,John Doe,,35,unknown
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:194 -> Tipo fuera del catalogo permitido: 'invalid' | 193,2024-01-16,1500,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:131 -> Edad fuera del rango permitido: '' | 126,Diana Prince,12000,,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:200 -> Tipo fuera del catalogo permitido: 'invalid' | 199,01/06/2024,700,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:132 -> Edad fuera del rango permitido: '' | 149,Alice Brown,8000,,prestamo
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:201 -> Monto vacio o no numerico: '' | 200,2024/10/13,,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:134 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 111,Unknown,5000,100,hipoteca
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:136 -> Saldo vacio o no numerico: '' | 121,John Doe,,35,hipoteca
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:137 -> Tipo fuera del catalogo permitido: '-1' | 123,Bob Johnson,12000,45,-1
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:707 -> Monto vacio o no numerico: '' | 103,13-09-2024,compra,,
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:138 -> Edad fuera del rango permitido: '' | 108,Alice Brown,10000,,ahorro
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:790 -> Monto vacio o no numerico: '' | 110,08-02-2024,compra,,Retiro parcial
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:139 -> Tipo fuera del catalogo permitido: '-1' | 121,John Doe,,,-1
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:793 -> Monto vacio o no numerico: '' | 105,01/09/2024,deposito,,Ingreso mensual
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:141 -> Tipo fuera del catalogo permitido: '-1' | 108,Jane Smith,12000,45,-1
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:143 -> Tipo fuera del catalogo permitido: '-1' | 115,Bob Johnson,7000,25,-1
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:144 -> Tipo fuera del catalogo permitido: '-1' | 135,Diana Prince,7000,100,-1
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:146 -> Tipo fuera del catalogo permitido: '-1' | 137,Steve Rogers,8000,,-1
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:148 -> Tipo fuera del catalogo permitido: '-1' | 112,John Doe,7000,150,-1
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:149 -> Tipo fuera del catalogo permitido: '-1' | 111,John Doe,,25,-1
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:150 -> Saldo vacio o no numerico: '' | 121,John Doe,,150,ahorro
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:151 -> Edad fuera del rango permitido: '' | 117,Bob Johnson,5000,,prestamo
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:152 -> Saldo vacio o no numerico: '' | 120,Diana Prince,,,ahorro
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:842 -> Monto vacio o no numerico: '' | 114,2024-05-18,deposito,,Retiro parcial
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:155 -> Tipo fuera del catalogo permitido: 'unknown' | 129,John Doe,12000,35,unknown
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:203 -> Monto vacio o no numerico: '' | 202,09-01-2024,,debito
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:849 -> Monto vacio o no numerico: '' | 112,2024/08/11,deposito,,
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:157 -> Tipo fuera del catalogo permitido: 'unknown' | 122,Jane Smith,5000,100,unknown
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:204 -> Fecha ilegible o inexistente: 2024-13-01 | 203,2024-13-01,1200,debito
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:851 -> Monto vacio o no numerico: '' | 107,2024-02-07,deposito,,Ingreso navideño
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:158 -> Tipo fuera del catalogo permitido: '-1' | 138,Diana Prince,5000,,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:206 -> Tipo fuera del catalogo permitido: 'invalid' | 205,07-08-2024,1000,invalid
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:856 -> Monto vacio o no numerico: '' | 118,20/05/2024,retiro,,Ingreso mensual
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:161 -> Saldo vacio o no numerico: '' | 145,Steve Rogers,,,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:209 -> Monto vacio o no numerico: '' | 208,2024/01/29,,invalid
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:867 -> Monto vacio o no numerico: '' | 101,01-09-2024,compra,,
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:162 -> Edad fuera del rango permitido: '' | 107,Steve Rogers,10000,,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:210 -> Fecha ilegible o inexistente: 2024-13-01 | 209,2024-13-01,1200,debito
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:878 -> Monto vacio o no numerico: '' | 101,27-05-2024,deposito,,Ingreso navideño
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:165 -> Tipo fuera del catalogo permitido: '-1' | 146,Jane Smith,,25,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:212 -> Tipo fuera del catalogo permitido: 'invalid' | 211,2024-04-18,800,invalid
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:886 -> Monto vacio o no numerico: '' | 102,29/11/2024,compra,,Compra en tienda
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:166 -> Tipo fuera del catalogo permitido: '-1' | 116,Steve Rogers,10000,30,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:215 -> Monto vacio o no numerico: '' | 214,2024/04/15,,desconocido
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:901 -> Monto vacio o no numerico: '' | 116,18/12/2024,deposito,,Ingreso navideño
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:167 -> Saldo vacio o no numerico: '' | 123,Alice Brown,,25,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:217 -> Tipo fuera del catalogo permitido: 'desconocido' | 216,2024-03-05,-200,desconocido
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:168 -> Saldo vacio o no numerico: '' | 103,Alice Brown,,150,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:222 -> Tipo fuera del catalogo permitido: 'invalid' | 221,19-06-2024,1200,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:169 -> Tipo fuera del catalogo permitido: '-1' | 140,John Doe,,30,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:226 -> Monto vacio o no numerico: '' | 225,2024/04/01,,desconocido
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:170 -> Edad fuera del rango permitido: '' | 120,Charlie Green,7000,,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:229 -> Tipo fuera del catalogo permitido: 'invalid' | 228,2024-07-12,1500,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:171 -> Tipo fuera del catalogo permitido: 'unknown' | 105,Jane Smith,7000,40,unknown
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:230 -> Monto vacio o no numerico: '' | 229,22-10-2024,,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:173 -> Tipo fuera del catalogo permitido: '-1' | 132,Bob Johnson,5000,150,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:231 -> Tipo fuera del catalogo permitido: 'invalid' | 230,13/01/2024,-100,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:175 -> Tipo fuera del catalogo permitido: '-1' | 120,Alice Brown,12000,45,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:232 -> Tipo fuera del catalogo permitido: 'invalid' | 231,2024/12/25,0,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:177 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 143,Charlie Green,5000,100,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:233 -> Tipo fuera del catalogo permitido: 'invalid' | 232,04/02/2024,1500,invalid
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:909 -> Monto vacio o no numerico: '' | 107,06/04/2024,retiro,,Ingreso mensual
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:178 -> Saldo vacio o no numerico: '' | 123,Steve Rogers,,,prestamo
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:236 -> Tipo fuera del catalogo permitido: 'invalid' | 235,07-04-2024,800,invalid
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:940 -> Monto vacio o no numerico: '' | 117,19-04-2024,retiro,,Retiro parcial
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:182 -> Edad fuera del rango permitido: '' | 123,Bob Johnson,10000,,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:243 -> Monto vacio o no numerico: '' | 242,24-07-2024,,credito
+01:52:29 WARN  [estadosCuentaAnualesJob] OMITIDO cuentas_anuales.csv:966 -> Monto vacio o no numerico: '' | 111,07-03-2024,deposito,,Ingreso mensual
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:183 -> Tipo fuera del catalogo permitido: 'unknown' | 135,Steve Rogers,10000,45,unknown
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:245 -> Tipo fuera del catalogo permitido: 'desconocido' | 244,2024-07-23,3000,desconocido
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:187 -> Edad fuera del rango permitido: '' | 104,Jane Smith,10000,,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:248 -> Monto vacio o no numerico: '' | 247,13/05/2024,,debito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:188 -> Edad fuera del rango permitido: '' | 110,Charlie Green,8000,,prestamo
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:249 -> Monto vacio o no numerico: '' | 248,10-12-2024,,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:191 -> Saldo vacio o no numerico: '' | 145,Steve Rogers,,,prestamo
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:250 -> Tipo fuera del catalogo permitido: 'invalid' | 249,19/06/2024,1200,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:192 -> Edad fuera del rango permitido: '' | 109,Steve Rogers,10000,,prestamo
+01:52:29 INFO  Step: [procesarMovimientosAnualesStep] executed in 426ms
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:254 -> Monto vacio o no numerico: '' | 253,02-09-2024,,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:193 -> Tipo fuera del catalogo permitido: '-1' | 132,John Doe,12000,45,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:255 -> Tipo fuera del catalogo permitido: 'invalid' | 254,2024/10/26,1200,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:195 -> Tipo fuera del catalogo permitido: 'unknown' | 150,Alice Brown,10000,40,unknown
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:259 -> Monto vacio o no numerico: '' | 258,2024/01/06,,credito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:197 -> Edad fuera del rango permitido: '' | 145,Alice Brown,7000,,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:260 -> Monto vacio o no numerico: '' | 259,04-05-2024,,credito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:198 -> Edad fuera del rango permitido: '' | 148,Alice Brown,7000,,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:261 -> Tipo fuera del catalogo permitido: 'desconocido' | 260,2024-03-23,3000,desconocido
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:199 -> Tipo fuera del catalogo permitido: '-1' | 120,Charlie Green,7000,40,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:263 -> Monto vacio o no numerico: '' | 262,02/09/2024,,debito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:201 -> Tipo fuera del catalogo permitido: '-1' | 103,Bob Johnson,10000,,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:264 -> Tipo fuera del catalogo permitido: 'invalid' | 263,02-07-2024,3000,invalid
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:265 -> Fecha ilegible o inexistente: 2024-13-01 | 264,2024-13-01,1500,invalid
+01:52:29 INFO  Executing step: [compilarEstadosCuentaStep]
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:267 -> Tipo fuera del catalogo permitido: 'invalid' | 266,02-11-2024,-200,invalid
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:268 -> Monto vacio o no numerico: '' | 267,2024/04/06,,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] FILTRADO intereses.csv:209 -> Registro duplicado, ya procesado en esta ejecucion: fila identica | 140,John Doe,,45,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:270 -> Tipo fuera del catalogo permitido: 'desconocido' | 269,2024/07/27,1200,desconocido
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:271 -> Fecha ilegible o inexistente: 2024-13-01 | 270,2024-13-01,1200,invalid
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:272 -> Monto vacio o no numerico: '' | 271,2024-03-18,,desconocido
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:273 -> Tipo fuera del catalogo permitido: 'invalid' | 272,2024/09/04,3000,invalid
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:274 -> Tipo fuera del catalogo permitido: 'invalid' | 273,26/04/2024,1000,invalid
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:280 -> Tipo fuera del catalogo permitido: 'invalid' | 279,2024-02-24,800,invalid
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:283 -> Monto vacio o no numerico: '' | 282,08/08/2024,,debito
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:286 -> Tipo fuera del catalogo permitido: 'desconocido' | 285,13/12/2024,1500,desconocido
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:202 -> Saldo vacio o no numerico: '' | 137,Alice Brown,,45,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:292 -> Tipo fuera del catalogo permitido: 'invalid' | 291,2024-04-17,1000,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:203 -> Edad fuera del rango permitido: '' | 140,Alice Brown,7000,,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:294 -> Tipo fuera del catalogo permitido: 'invalid' | 293,18/10/2024,1500,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:205 -> Tipo fuera del catalogo permitido: '-1' | 114,Bob Johnson,5000,30,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:295 -> Tipo fuera del catalogo permitido: 'desconocido' | 294,2024/07/01,700,desconocido
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:206 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 114,Steve Rogers,5000,100,prestamo
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:296 -> Monto vacio o no numerico: '' | 295,2024-06-12,,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:207 -> Tipo fuera del catalogo permitido: '-1' | 105,Diana Prince,5000,30,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:297 -> Monto vacio o no numerico: '' | 296,09/12/2024,,debito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:208 -> Tipo fuera del catalogo permitido: '-1' | 116,Alice Brown,8000,35,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:298 -> Tipo fuera del catalogo permitido: 'desconocido' | 297,2024-08-19,1000,desconocido
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:210 -> Saldo vacio o no numerico: '' | 142,Alice Brown,,100,prestamo
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:299 -> Fecha ilegible o inexistente: 2024-13-01 | 298,2024-13-01,700,debito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:211 -> Tipo fuera del catalogo permitido: '-1' | 125,Jane Smith,12000,30,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:300 -> Tipo fuera del catalogo permitido: 'invalid' | 299,2024-10-10,700,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:213 -> Tipo fuera del catalogo permitido: '-1' | 114,Charlie Green,7000,100,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:301 -> Tipo fuera del catalogo permitido: 'invalid' | 300,2024-03-28,1500,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:214 -> Edad fuera del rango permitido: '' | 112,John Doe,12000,,ahorro
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:215 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 128,Jane Smith,7000,100,hipoteca
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:217 -> Tipo fuera del catalogo permitido: '-1' | 150,Jane Smith,8000,,-1
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:218 -> Tipo fuera del catalogo permitido: '-1' | 129,Charlie Green,10000,40,-1
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:221 -> Saldo vacio o no numerico: '' | 127,Steve Rogers,,,prestamo
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:222 -> Tipo fuera del catalogo permitido: '-1' | 125,Charlie Green,12000,25,-1
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:223 -> Saldo vacio o no numerico: '' | 126,Diana Prince,,35,prestamo
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:224 -> Edad fuera del rango permitido: '' | 118,Bob Johnson,8000,,ahorro
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:225 -> Tipo fuera del catalogo permitido: '-1' | 114,Alice Brown,,,-1
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:226 -> Edad fuera del rango permitido: 150 (rango permitido 18-99) | 114,Charlie Green,10000,150,hipoteca
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:227 -> Tipo fuera del catalogo permitido: '-1' | 138,Diana Prince,7000,35,-1
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:231 -> Edad fuera del rango permitido: '' | 140,Steve Rogers,12000,,ahorro
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:235 -> Edad fuera del rango permitido: 150 (rango permitido 18-99) | 144,Charlie Green,7000,150,prestamo
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:303 -> Monto vacio o no numerico: '' | 302,16/10/2024,,debito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:236 -> Edad fuera del rango permitido: '' | 132,Alice Brown,5000,,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:305 -> Tipo fuera del catalogo permitido: 'invalid' | 304,03-03-2024,1000,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:237 -> Tipo fuera del catalogo permitido: '-1' | 122,Jane Smith,,100,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:306 -> Tipo fuera del catalogo permitido: 'invalid' | 305,18-10-2024,700,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:238 -> Tipo fuera del catalogo permitido: '-1' | 116,Alice Brown,12000,30,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:307 -> Monto vacio o no numerico: '' | 306,2024-07-08,,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:240 -> Tipo fuera del catalogo permitido: '-1' | 129,Unknown,,35,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:308 -> Monto vacio o no numerico: '' | 307,02/01/2024,,credito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:241 -> Edad fuera del rango permitido: '' | 117,Steve Rogers,10000,,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:309 -> Fecha ilegible o inexistente: 2024-13-01 | 308,2024-13-01,,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:244 -> Saldo vacio o no numerico: '' | 147,John Doe,,35,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:311 -> Tipo fuera del catalogo permitido: 'invalid' | 310,14/12/2024,1000,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:246 -> Saldo vacio o no numerico: '' | 144,John Doe,,,prestamo
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:312 -> Fecha ilegible o inexistente: 2024-13-01 | 311,2024-13-01,1000,credito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:247 -> Tipo fuera del catalogo permitido: '-1' | 123,Steve Rogers,,,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:313 -> Tipo fuera del catalogo permitido: 'desconocido' | 312,24/06/2024,1200,desconocido
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:248 -> Edad fuera del rango permitido: '' | 122,Charlie Green,5000,,prestamo
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:314 -> Tipo fuera del catalogo permitido: 'invalid' | 313,16/10/2024,-200,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:250 -> Saldo vacio o no numerico: '' | 106,Diana Prince,,30,prestamo
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:315 -> Tipo fuera del catalogo permitido: 'invalid' | 314,22/03/2024,-200,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:252 -> Saldo vacio o no numerico: '' | 125,Steve Rogers,,100,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:316 -> Fecha ilegible o inexistente: 2024-13-01 | 315,2024-13-01,1200,debito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:254 -> Tipo fuera del catalogo permitido: 'unknown' | 139,Alice Brown,12000,100,unknown
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:317 -> Monto vacio o no numerico: '' | 316,2024/04/01,,credito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:255 -> Edad fuera del rango permitido: '' | 115,Alice Brown,7000,,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:318 -> Tipo fuera del catalogo permitido: 'invalid' | 317,19-01-2024,800,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:256 -> Tipo fuera del catalogo permitido: 'unknown' | 106,Diana Prince,5000,100,unknown
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:319 -> Tipo fuera del catalogo permitido: 'invalid' | 318,2024-06-04,1500,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:257 -> Tipo fuera del catalogo permitido: '-1' | 114,Steve Rogers,7000,45,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:320 -> Tipo fuera del catalogo permitido: 'invalid' | 319,2024-05-08,-200,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:259 -> Saldo vacio o no numerico: '' | 103,Charlie Green,,30,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:321 -> Tipo fuera del catalogo permitido: 'invalid' | 320,29/02/2024,700,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:260 -> Saldo vacio o no numerico: '' | 109,Diana Prince,,40,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:323 -> Monto vacio o no numerico: '' | 322,2024-01-28,,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:263 -> Edad fuera del rango permitido: '' | 102,Jane Smith,5000,,prestamo
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:325 -> Tipo fuera del catalogo permitido: 'invalid' | 324,23/09/2024,800,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:267 -> Edad fuera del rango permitido: 150 (rango permitido 18-99) | 137,John Doe,10000,150,prestamo
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:327 -> Tipo fuera del catalogo permitido: 'invalid' | 326,2024/12/15,1200,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:268 -> Tipo fuera del catalogo permitido: 'unknown' | 136,Diana Prince,,30,unknown
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:328 -> Tipo fuera del catalogo permitido: 'desconocido' | 327,30-04-2024,-200,desconocido
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:269 -> Edad fuera del rango permitido: '' | 123,John Doe,8000,,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:330 -> Tipo fuera del catalogo permitido: 'invalid' | 329,2024-05-02,700,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:270 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 106,Alice Brown,12000,100,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:331 -> Monto vacio o no numerico: '' | 330,04/12/2024,,credito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:271 -> Tipo fuera del catalogo permitido: '-1' | 123,Alice Brown,10000,,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:334 -> Monto vacio o no numerico: '' | 333,22-02-2024,,debito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:273 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 142,John Doe,8000,100,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:337 -> Tipo fuera del catalogo permitido: 'invalid' | 336,2024/03/14,800,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:275 -> Tipo fuera del catalogo permitido: '-1' | 122,Diana Prince,5000,25,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:339 -> Tipo fuera del catalogo permitido: 'invalid' | 338,2024/06/19,800,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:276 -> Saldo vacio o no numerico: '' | 126,Charlie Green,,35,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:340 -> Monto vacio o no numerico: '' | 339,06-06-2024,,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:279 -> Tipo fuera del catalogo permitido: '-1' | 121,Bob Johnson,5000,25,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:342 -> Tipo fuera del catalogo permitido: 'invalid' | 341,2024-01-28,-200,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:280 -> Saldo vacio o no numerico: '' | 149,Charlie Green,,100,prestamo
+01:52:29 INFO  Archivo de salida generado: salida/estados_cuenta_anuales.csv
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:343 -> Monto vacio o no numerico: '' | 342,08-07-2024,,debito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:281 -> Saldo vacio o no numerico: '' | 143,Diana Prince,,40,hipoteca
+01:52:29 INFO  Estados de cuenta compilados: 20 combinaciones cuenta/ano, 952 movimientos
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:344 -> Tipo fuera del catalogo permitido: 'invalid' | 343,08-01-2024,3000,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:282 -> Edad fuera del rango permitido: '' | 121,Charlie Green,5000,,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:346 -> Tipo fuera del catalogo permitido: 'invalid' | 345,19/11/2024,700,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:283 -> Tipo fuera del catalogo permitido: '-1' | 116,John Doe,12000,,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:347 -> Tipo fuera del catalogo permitido: 'invalid' | 346,2024/10/12,1500,invalid
+01:52:29 INFO  Step: [compilarEstadosCuentaStep] executed in 100ms
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:289 -> Saldo vacio o no numerico: '' | 145,Jane Smith,,25,prestamo
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:348 -> Tipo fuera del catalogo permitido: 'invalid' | 347,20-05-2024,3000,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:290 -> Saldo vacio o no numerico: '' | 138,Alice Brown,,45,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:353 -> Tipo fuera del catalogo permitido: 'invalid' | 352,02/02/2024,-200,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:291 -> Tipo fuera del catalogo permitido: '-1' | 114,John Doe,8000,25,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:354 -> Monto vacio o no numerico: '' | 353,18-04-2024,,credito
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:355 -> Monto vacio o no numerico: '' | 354,10/01/2024,,debito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:294 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 101,Steve Rogers,10000,100,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:358 -> Fecha ilegible o inexistente: 2024-13-01 | 357,2024-13-01,1000,credito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:295 -> Tipo fuera del catalogo permitido: '-1' | 128,Diana Prince,8000,35,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:359 -> Monto vacio o no numerico: '' | 358,2024/10/10,,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:296 -> Tipo fuera del catalogo permitido: '-1' | 120,Alice Brown,10000,100,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:360 -> Monto vacio o no numerico: '' | 359,04/08/2024,,debito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:297 -> Tipo fuera del catalogo permitido: '-1' | 150,Unknown,10000,100,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:361 -> Tipo fuera del catalogo permitido: 'invalid' | 360,23-04-2024,700,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:298 -> Tipo fuera del catalogo permitido: '-1' | 121,Alice Brown,5000,40,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:362 -> Monto vacio o no numerico: '' | 361,08/05/2024,,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:299 -> Tipo fuera del catalogo permitido: 'unknown' | 114,Bob Johnson,8000,45,unknown
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:364 -> Tipo fuera del catalogo permitido: 'invalid' | 363,2024/01/09,1000,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:300 -> Edad fuera del rango permitido: '' | 117,Alice Brown,5000,,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:370 -> Tipo fuera del catalogo permitido: 'desconocido' | 369,2024/09/29,800,desconocido
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:301 -> Edad fuera del rango permitido: 150 (rango permitido 18-99) | 147,Diana Prince,8000,150,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:375 -> Tipo fuera del catalogo permitido: 'desconocido' | 374,2024/07/25,800,desconocido
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:378 -> Monto vacio o no numerico: '' | 377,25/05/2024,,credito
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:380 -> Tipo fuera del catalogo permitido: 'invalid' | 379,2024/03/09,1000,invalid
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:382 -> Monto vacio o no numerico: '' | 381,25/06/2024,,credito
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:383 -> Tipo fuera del catalogo permitido: 'invalid' | 382,04/07/2024,500,invalid
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:384 -> Tipo fuera del catalogo permitido: 'invalid' | 383,26-01-2024,800,invalid
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:385 -> Tipo fuera del catalogo permitido: 'invalid' | 384,2024/05/30,700,invalid
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:386 -> Tipo fuera del catalogo permitido: 'invalid' | 385,27-07-2024,1500,invalid
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:387 -> Tipo fuera del catalogo permitido: 'desconocido' | 386,2024/01/01,-200,desconocido
+01:52:29 WARN  [calculoInteresesMensualesJob] FILTRADO intereses.csv:362 -> Registro duplicado, ya procesado en esta ejecucion: fila identica | 120,John Doe,,,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:388 -> Tipo fuera del catalogo permitido: 'invalid' | 387,2024/07/10,3000,invalid
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:389 -> Monto vacio o no numerico: '' | 388,2024/09/14,,debito
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:390 -> Monto vacio o no numerico: '' | 389,2024-11-19,,credito
+01:52:29 WARN  [calculoInteresesMensualesJob] FILTRADO intereses.csv:390 -> Registro duplicado, ya procesado en esta ejecucion: fila identica | 147,John Doe,,30,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:394 -> Fecha ilegible o inexistente: 2024-13-01 | 393,2024-13-01,800,credito
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:397 -> Monto vacio o no numerico: '' | 396,23-05-2024,,debito
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:399 -> Tipo fuera del catalogo permitido: 'invalid' | 398,2024-05-09,1000,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:302 -> Saldo vacio o no numerico: '' | 109,Bob Johnson,,,hipoteca
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:303 -> Tipo fuera del catalogo permitido: '-1' | 112,Diana Prince,10000,150,-1
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:305 -> Tipo fuera del catalogo permitido: '-1' | 120,Alice Brown,5000,45,-1
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:307 -> Saldo vacio o no numerico: '' | 112,Jane Smith,,150,hipoteca
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:309 -> Tipo fuera del catalogo permitido: '-1' | 141,Alice Brown,5000,,-1
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:310 -> Tipo fuera del catalogo permitido: '-1' | 149,Steve Rogers,10000,40,-1
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:312 -> Tipo fuera del catalogo permitido: '-1' | 132,Bob Johnson,7000,100,-1
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:313 -> Tipo fuera del catalogo permitido: '-1' | 141,Alice Brown,10000,30,-1
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:314 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 123,Unknown,7000,100,prestamo
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:315 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 118,John Doe,10000,100,hipoteca
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:316 -> Saldo vacio o no numerico: '' | 138,Jane Smith,,,hipoteca
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:317 -> Tipo fuera del catalogo permitido: '-1' | 123,Alice Brown,8000,45,-1
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:319 -> Tipo fuera del catalogo permitido: '-1' | 144,Charlie Green,7000,30,-1
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:321 -> Tipo fuera del catalogo permitido: '-1' | 136,Steve Rogers,12000,35,-1
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:322 -> Edad fuera del rango permitido: 150 (rango permitido 18-99) | 105,John Doe,10000,150,ahorro
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:324 -> Saldo vacio o no numerico: '' | 147,John Doe,,30,ahorro
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:325 -> Saldo vacio o no numerico: '' | 145,Bob Johnson,,35,ahorro
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:326 -> Saldo vacio o no numerico: '' | 138,Charlie Green,,100,prestamo
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:328 -> Tipo fuera del catalogo permitido: '-1' | 123,Charlie Green,5000,40,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:403 -> Monto vacio o no numerico: '' | 402,2024/07/16,,credito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:330 -> Tipo fuera del catalogo permitido: '-1' | 146,Bob Johnson,10000,40,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:405 -> Monto vacio o no numerico: '' | 404,2024-10-13,,credito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:336 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 105,Diana Prince,7000,100,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:407 -> Tipo fuera del catalogo permitido: 'desconocido' | 406,24/03/2024,700,desconocido
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:337 -> Edad fuera del rango permitido: '' | 128,Steve Rogers,5000,,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:408 -> Tipo fuera del catalogo permitido: 'desconocido' | 407,2024-09-21,-200,desconocido
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:338 -> Tipo fuera del catalogo permitido: '-1' | 113,Unknown,,40,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:411 -> Tipo fuera del catalogo permitido: 'invalid' | 410,23-11-2024,1500,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:339 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 106,Charlie Green,10000,100,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:413 -> Tipo fuera del catalogo permitido: 'invalid' | 412,06-12-2024,1000,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:340 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 116,Diana Prince,8000,100,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:414 -> Tipo fuera del catalogo permitido: 'invalid' | 413,2024/10/21,1500,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:341 -> Saldo vacio o no numerico: '' | 140,John Doe,,30,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:415 -> Monto vacio o no numerico: '' | 414,2024-08-07,,debito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:343 -> Tipo fuera del catalogo permitido: '-1' | 110,Alice Brown,7000,,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:416 -> Monto vacio o no numerico: '' | 415,2024/06/29,,credito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:344 -> Tipo fuera del catalogo permitido: '-1' | 115,Diana Prince,,40,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:417 -> Monto vacio o no numerico: '' | 416,2024-11-17,,desconocido
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:345 -> Tipo fuera del catalogo permitido: '-1' | 138,Charlie Green,5000,,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:418 -> Monto vacio o no numerico: '' | 417,2024/06/19,,debito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:346 -> Tipo fuera del catalogo permitido: '-1' | 150,Diana Prince,8000,35,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:419 -> Monto vacio o no numerico: '' | 418,2024-12-28,,credito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:347 -> Tipo fuera del catalogo permitido: '-1' | 101,Steve Rogers,5000,35,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:424 -> Tipo fuera del catalogo permitido: 'invalid' | 423,2024/08/28,800,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:348 -> Saldo vacio o no numerico: '' | 105,Alice Brown,,25,prestamo
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:426 -> Tipo fuera del catalogo permitido: 'invalid' | 425,09/01/2024,1200,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:349 -> Saldo vacio o no numerico: '' | 150,Steve Rogers,,25,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:428 -> Monto vacio o no numerico: '' | 427,2024/12/27,,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:350 -> Edad fuera del rango permitido: 150 (rango permitido 18-99) | 137,Charlie Green,7000,150,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:430 -> Monto vacio o no numerico: '' | 429,2024-09-27,,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:351 -> Saldo vacio o no numerico: '' | 124,John Doe,,35,prestamo
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:431 -> Tipo fuera del catalogo permitido: 'invalid' | 430,2024-05-07,1000,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:352 -> Tipo fuera del catalogo permitido: '-1' | 132,John Doe,,40,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:432 -> Tipo fuera del catalogo permitido: 'desconocido' | 431,2024/05/04,-200,desconocido
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:353 -> Tipo fuera del catalogo permitido: '-1' | 113,Alice Brown,,,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:434 -> Tipo fuera del catalogo permitido: 'invalid' | 433,2024-11-18,1500,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:354 -> Tipo fuera del catalogo permitido: '-1' | 119,Steve Rogers,,35,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:435 -> Tipo fuera del catalogo permitido: 'desconocido' | 434,2024/05/03,1500,desconocido
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:355 -> Tipo fuera del catalogo permitido: 'unknown' | 113,Charlie Green,7000,,unknown
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:436 -> Monto vacio o no numerico: '' | 435,2024/11/20,,credito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:356 -> Tipo fuera del catalogo permitido: 'unknown' | 146,Charlie Green,8000,25,unknown
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:438 -> Monto vacio o no numerico: '' | 437,2024/02/28,,credito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:359 -> Tipo fuera del catalogo permitido: '-1' | 118,Jane Smith,5000,25,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:439 -> Tipo fuera del catalogo permitido: 'invalid' | 438,2024-10-18,1500,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:360 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 144,Diana Prince,8000,100,prestamo
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:441 -> Monto vacio o no numerico: '' | 440,28/07/2024,,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:361 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 127,John Doe,12000,100,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:444 -> Monto vacio o no numerico: '' | 443,11/05/2024,,credito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:364 -> Tipo fuera del catalogo permitido: 'unknown' | 114,Jane Smith,12000,100,unknown
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:445 -> Tipo fuera del catalogo permitido: 'desconocido' | 444,2024-04-19,1200,desconocido
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:365 -> Tipo fuera del catalogo permitido: '-1' | 139,Charlie Green,12000,45,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:446 -> Fecha ilegible o inexistente: 2024-13-01 | 445,2024-13-01,1200,debito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:366 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 132,Alice Brown,12000,100,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:447 -> Tipo fuera del catalogo permitido: 'invalid' | 446,2024-07-11,700,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:369 -> Tipo fuera del catalogo permitido: '-1' | 107,Bob Johnson,8000,45,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:449 -> Monto vacio o no numerico: '' | 448,08-06-2024,,debito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:370 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 118,Charlie Green,5000,100,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:452 -> Tipo fuera del catalogo permitido: 'invalid' | 451,02/07/2024,700,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:371 -> Saldo vacio o no numerico: '' | 149,Steve Rogers,,150,prestamo
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:454 -> Fecha ilegible o inexistente: 2024-13-01 | 453,2024-13-01,800,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:373 -> Edad fuera del rango permitido: '' | 128,Diana Prince,7000,,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:456 -> Tipo fuera del catalogo permitido: 'invalid' | 455,29/02/2024,800,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:375 -> Tipo fuera del catalogo permitido: '-1' | 127,Charlie Green,7000,30,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:457 -> Tipo fuera del catalogo permitido: 'invalid' | 456,18-10-2024,1200,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:377 -> Tipo fuera del catalogo permitido: '-1' | 120,Jane Smith,5000,150,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:461 -> Tipo fuera del catalogo permitido: 'invalid' | 460,21-08-2024,0,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:378 -> Tipo fuera del catalogo permitido: 'unknown' | 146,John Doe,,45,unknown
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:462 -> Fecha ilegible o inexistente: 2024-13-01 | 461,2024-13-01,700,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:379 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 132,Bob Johnson,8000,100,prestamo
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:463 -> Fecha ilegible o inexistente: 2024-13-01 | 462,2024-13-01,1500,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:380 -> Tipo fuera del catalogo permitido: '-1' | 112,Jane Smith,,100,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:467 -> Monto vacio o no numerico: '' | 466,2024/11/30,,credito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:381 -> Tipo fuera del catalogo permitido: '-1' | 129,Steve Rogers,7000,150,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:470 -> Tipo fuera del catalogo permitido: 'invalid' | 469,2024/12/03,1000,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:382 -> Edad fuera del rango permitido: '' | 136,Bob Johnson,10000,,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:471 -> Monto vacio o no numerico: '' | 470,2024/09/19,,debito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:383 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 134,Diana Prince,12000,100,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:472 -> Tipo fuera del catalogo permitido: 'desconocido' | 471,04/12/2024,1000,desconocido
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:384 -> Tipo fuera del catalogo permitido: '-1' | 105,Jane Smith,10000,25,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:473 -> Fecha ilegible o inexistente: 2024-13-01 | 472,2024-13-01,,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:385 -> Saldo vacio o no numerico: '' | 112,Bob Johnson,,25,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:474 -> Tipo fuera del catalogo permitido: 'invalid' | 473,15/08/2024,700,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:387 -> Tipo fuera del catalogo permitido: '-1' | 111,Steve Rogers,10000,,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:475 -> Fecha ilegible o inexistente: 2024-13-01 | 474,2024-13-01,1200,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:392 -> Tipo fuera del catalogo permitido: '-1' | 120,Bob Johnson,5000,45,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:476 -> Tipo fuera del catalogo permitido: 'invalid' | 475,2024/12/28,0,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:393 -> Edad fuera del rango permitido: '' | 133,John Doe,10000,,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:477 -> Monto vacio o no numerico: '' | 476,2024/07/06,,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:395 -> Tipo fuera del catalogo permitido: '-1' | 114,Steve Rogers,10000,100,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:480 -> Monto vacio o no numerico: '' | 479,07-12-2024,,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:396 -> Tipo fuera del catalogo permitido: '-1' | 132,Diana Prince,7000,,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:483 -> Tipo fuera del catalogo permitido: 'invalid' | 482,2024-02-04,800,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:397 -> Tipo fuera del catalogo permitido: '-1' | 147,Unknown,5000,45,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:486 -> Tipo fuera del catalogo permitido: 'desconocido' | 485,17-11-2024,1000,desconocido
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:398 -> Saldo vacio o no numerico: '' | 104,Steve Rogers,,,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:487 -> Tipo fuera del catalogo permitido: 'invalid' | 486,17-09-2024,800,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:399 -> Saldo vacio o no numerico: '' | 108,Alice Brown,,100,prestamo
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:489 -> Monto vacio o no numerico: '' | 488,11/12/2024,,debito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:400 -> Tipo fuera del catalogo permitido: '-1' | 126,Unknown,12000,25,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:491 -> Tipo fuera del catalogo permitido: 'invalid' | 490,26/07/2024,700,invalid
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:492 -> Monto vacio o no numerico: '' | 491,2024/03/31,,credito
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:493 -> Tipo fuera del catalogo permitido: 'invalid' | 492,2024/11/07,-200,invalid
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:494 -> Tipo fuera del catalogo permitido: 'invalid' | 493,2024-08-29,0,invalid
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:497 -> Monto vacio o no numerico: '' | 496,2024/09/14,,invalid
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:498 -> Tipo fuera del catalogo permitido: 'desconocido' | 497,2024/04/20,-200,desconocido
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:499 -> Fecha ilegible o inexistente: 2024-13-01 | 498,2024-13-01,1500,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] FILTRADO intereses.csv:440 -> Registro duplicado, ya procesado en esta ejecucion: fila identica | 110,Alice Brown,7000,,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:501 -> Monto vacio o no numerico: '' | 500,2024/04/24,,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] FILTRADO intereses.csv:480 -> Registro duplicado, ya procesado en esta ejecucion: fila identica | 108,John Doe,8000,45,prestamo
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:402 -> Tipo fuera del catalogo permitido: '-1' | 110,John Doe,8000,25,-1
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:403 -> Edad fuera del rango permitido: 150 (rango permitido 18-99) | 116,Steve Rogers,7000,150,hipoteca
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:404 -> Tipo fuera del catalogo permitido: '-1' | 107,John Doe,7000,25,-1
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:407 -> Tipo fuera del catalogo permitido: '-1' | 134,Diana Prince,10000,40,-1
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:410 -> Saldo vacio o no numerico: '' | 103,John Doe,,45,hipoteca
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:411 -> Tipo fuera del catalogo permitido: 'unknown' | 117,Alice Brown,10000,100,unknown
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:412 -> Tipo fuera del catalogo permitido: '-1' | 106,Diana Prince,8000,25,-1
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:413 -> Tipo fuera del catalogo permitido: '-1' | 128,Jane Smith,8000,30,-1
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:414 -> Tipo fuera del catalogo permitido: 'unknown' | 103,Jane Smith,7000,25,unknown
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:415 -> Edad fuera del rango permitido: '' | 120,Jane Smith,5000,,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:502 -> Monto vacio o no numerico: '' | 501,2024-03-24,,credito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:416 -> Saldo vacio o no numerico: '' | 109,Alice Brown,,150,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:504 -> Tipo fuera del catalogo permitido: 'invalid' | 503,14-02-2024,1500,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:417 -> Edad fuera del rango permitido: '' | 135,Charlie Green,12000,,prestamo
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:507 -> Tipo fuera del catalogo permitido: 'invalid' | 506,2024-06-10,-200,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:418 -> Saldo vacio o no numerico: '' | 129,Diana Prince,,30,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:508 -> Tipo fuera del catalogo permitido: 'invalid' | 507,05-04-2024,0,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:419 -> Saldo vacio o no numerico: '' | 130,John Doe,,40,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:512 -> Tipo fuera del catalogo permitido: 'invalid' | 511,22/02/2024,-200,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:422 -> Edad fuera del rango permitido: '' | 144,Steve Rogers,10000,,prestamo
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:514 -> Tipo fuera del catalogo permitido: 'desconocido' | 513,2024/01/10,3000,desconocido
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:423 -> Saldo vacio o no numerico: '' | 120,Jane Smith,,25,prestamo
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:515 -> Tipo fuera del catalogo permitido: 'invalid' | 514,20/10/2024,-200,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:425 -> Saldo vacio o no numerico: '' | 102,Jane Smith,,150,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:517 -> Tipo fuera del catalogo permitido: 'desconocido' | 516,21/08/2024,-200,desconocido
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:426 -> Saldo vacio o no numerico: '' | 145,Alice Brown,,100,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:518 -> Monto vacio o no numerico: '' | 517,17/04/2024,,debito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:431 -> Tipo fuera del catalogo permitido: '-1' | 137,Jane Smith,8000,,-1
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:432 -> Tipo fuera del catalogo permitido: '-1' | 130,Alice Brown,,25,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:519 -> Monto vacio o no numerico: '' | 518,02/03/2024,,invalid
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:520 -> Tipo fuera del catalogo permitido: 'invalid' | 519,24-08-2024,-200,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:433 -> Tipo fuera del catalogo permitido: 'unknown' | 116,Alice Brown,12000,40,unknown
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:523 -> Tipo fuera del catalogo permitido: 'invalid' | 522,2024-06-12,1500,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:435 -> Saldo vacio o no numerico: '' | 126,Bob Johnson,,,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:524 -> Tipo fuera del catalogo permitido: 'invalid' | 523,2024/02/03,1000,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:436 -> Tipo fuera del catalogo permitido: '-1' | 129,Jane Smith,10000,,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:525 -> Tipo fuera del catalogo permitido: 'invalid' | 524,2024-11-12,1200,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:437 -> Tipo fuera del catalogo permitido: '-1' | 138,Unknown,10000,30,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:526 -> Fecha ilegible o inexistente: 2024-13-01 | 525,2024-13-01,700,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:438 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 148,Unknown,5000,100,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:527 -> Tipo fuera del catalogo permitido: 'invalid' | 526,26/03/2024,700,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:439 -> Edad fuera del rango permitido: '' | 124,Steve Rogers,7000,,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:529 -> Tipo fuera del catalogo permitido: 'invalid' | 528,13/06/2024,3000,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:441 -> Tipo fuera del catalogo permitido: '-1' | 139,Jane Smith,,100,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:531 -> Tipo fuera del catalogo permitido: 'invalid' | 530,2024/07/10,700,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:442 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 107,Alice Brown,7000,100,prestamo
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:535 -> Tipo fuera del catalogo permitido: 'invalid' | 534,2024-05-15,3000,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:443 -> Tipo fuera del catalogo permitido: '-1' | 142,Steve Rogers,7000,30,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:536 -> Tipo fuera del catalogo permitido: 'desconocido' | 535,19-10-2024,1000,desconocido
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:444 -> Saldo vacio o no numerico: '' | 113,John Doe,,30,prestamo
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:538 -> Monto vacio o no numerico: '' | 537,2024/08/25,,credito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:445 -> Tipo fuera del catalogo permitido: '-1' | 107,Alice Brown,10000,40,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:543 -> Monto vacio o no numerico: '' | 542,07/01/2024,,debito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:446 -> Edad fuera del rango permitido: '' | 140,Charlie Green,5000,,prestamo
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:544 -> Fecha ilegible o inexistente: 2024-13-01 | 543,2024-13-01,1500,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:447 -> Tipo fuera del catalogo permitido: '-1' | 113,Alice Brown,7000,150,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:550 -> Monto vacio o no numerico: '' | 549,05/11/2024,,credito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:448 -> Tipo fuera del catalogo permitido: '-1' | 114,Bob Johnson,7000,,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:552 -> Monto vacio o no numerico: '' | 551,11-03-2024,,credito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:449 -> Edad fuera del rango permitido: 150 (rango permitido 18-99) | 102,Bob Johnson,5000,150,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:553 -> Tipo fuera del catalogo permitido: 'invalid' | 552,2024-06-01,800,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:451 -> Tipo fuera del catalogo permitido: '-1' | 143,Charlie Green,,45,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:558 -> Monto vacio o no numerico: '' | 557,06/09/2024,,debito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:452 -> Tipo fuera del catalogo permitido: '-1' | 103,Jane Smith,10000,100,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:559 -> Tipo fuera del catalogo permitido: 'invalid' | 558,2024-10-21,700,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:453 -> Edad fuera del rango permitido: '' | 107,Alice Brown,7000,,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:560 -> Tipo fuera del catalogo permitido: 'desconocido' | 559,2024-12-26,-200,desconocido
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:455 -> Saldo vacio o no numerico: '' | 107,Bob Johnson,,35,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:561 -> Fecha ilegible o inexistente: 2024-13-01 | 560,2024-13-01,-200,credito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:456 -> Saldo vacio o no numerico: '' | 142,Steve Rogers,,25,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:562 -> Tipo fuera del catalogo permitido: 'invalid' | 561,2024-01-05,1500,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:457 -> Edad fuera del rango permitido: '' | 148,Charlie Green,8000,,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:566 -> Monto vacio o no numerico: '' | 565,2024/11/11,,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:458 -> Tipo fuera del catalogo permitido: 'unknown' | 144,Bob Johnson,10000,,unknown
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:570 -> Tipo fuera del catalogo permitido: 'desconocido' | 569,05-06-2024,1200,desconocido
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:460 -> Tipo fuera del catalogo permitido: 'unknown' | 114,Steve Rogers,10000,,unknown
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:571 -> Tipo fuera del catalogo permitido: 'desconocido' | 570,2024-03-20,1200,desconocido
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:461 -> Edad fuera del rango permitido: '' | 103,Jane Smith,5000,,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:577 -> Tipo fuera del catalogo permitido: 'invalid' | 576,11/04/2024,1000,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:462 -> Tipo fuera del catalogo permitido: '-1' | 150,Diana Prince,10000,25,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:579 -> Tipo fuera del catalogo permitido: 'invalid' | 578,05-12-2024,-200,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:463 -> Tipo fuera del catalogo permitido: '-1' | 125,John Doe,,25,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:580 -> Monto vacio o no numerico: '' | 579,2024-05-01,,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:464 -> Edad fuera del rango permitido: 150 (rango permitido 18-99) | 150,Jane Smith,8000,150,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:581 -> Tipo fuera del catalogo permitido: 'invalid' | 580,2024/11/28,700,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:465 -> Tipo fuera del catalogo permitido: 'unknown' | 123,John Doe,5000,35,unknown
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:583 -> Tipo fuera del catalogo permitido: 'invalid' | 582,20/03/2024,1500,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:467 -> Tipo fuera del catalogo permitido: '-1' | 138,Bob Johnson,10000,30,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:584 -> Tipo fuera del catalogo permitido: 'invalid' | 583,22-02-2024,3000,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:471 -> Edad fuera del rango permitido: 150 (rango permitido 18-99) | 137,Jane Smith,7000,150,ahorro
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:585 -> Tipo fuera del catalogo permitido: 'invalid' | 584,09/01/2024,700,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:472 -> Tipo fuera del catalogo permitido: '-1' | 103,Diana Prince,10000,100,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:595 -> Monto vacio o no numerico: '' | 594,2024-12-17,,debito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:474 -> Tipo fuera del catalogo permitido: '-1' | 145,Steve Rogers,,100,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:596 -> Fecha ilegible o inexistente: 2024-13-01 | 595,2024-13-01,1000,debito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:475 -> Tipo fuera del catalogo permitido: 'unknown' | 138,John Doe,10000,25,unknown
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:597 -> Tipo fuera del catalogo permitido: 'invalid' | 596,2024-09-27,700,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:476 -> Edad fuera del rango permitido: '' | 117,Diana Prince,12000,,hipoteca
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:599 -> Monto vacio o no numerico: '' | 598,06-04-2024,,credito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:477 -> Tipo fuera del catalogo permitido: '-1' | 131,Bob Johnson,10000,,-1
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:600 -> Fecha ilegible o inexistente: 2024-13-01 | 599,2024-13-01,700,debito
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:478 -> Edad fuera del rango permitido: '' | 132,Unknown,12000,,prestamo
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:601 -> Tipo fuera del catalogo permitido: 'invalid' | 600,09/02/2024,1500,invalid
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:479 -> Tipo fuera del catalogo permitido: '-1' | 146,Bob Johnson,,30,-1
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:481 -> Tipo fuera del catalogo permitido: 'unknown' | 112,Jane Smith,5000,40,unknown
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:482 -> Tipo fuera del catalogo permitido: 'unknown' | 119,Steve Rogers,5000,45,unknown
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:483 -> Tipo fuera del catalogo permitido: '-1' | 137,Alice Brown,8000,,-1
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:484 -> Tipo fuera del catalogo permitido: 'unknown' | 127,Charlie Green,7000,30,unknown
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:485 -> Tipo fuera del catalogo permitido: '-1' | 109,Unknown,,25,-1
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:486 -> Saldo vacio o no numerico: '' | 118,John Doe,,40,hipoteca
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:487 -> Saldo vacio o no numerico: '' | 121,John Doe,,25,ahorro
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:489 -> Edad fuera del rango permitido: '' | 119,John Doe,8000,,ahorro
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:491 -> Edad fuera del rango permitido: '' | 122,Diana Prince,7000,,ahorro
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:492 -> Edad fuera del rango permitido: '' | 113,John Doe,12000,,ahorro
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:493 -> Tipo fuera del catalogo permitido: '-1' | 131,Bob Johnson,7000,35,-1
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:494 -> Saldo vacio o no numerico: '' | 111,Steve Rogers,,,hipoteca
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:495 -> Saldo vacio o no numerico: '' | 114,Diana Prince,,,ahorro
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:496 -> Tipo fuera del catalogo permitido: 'unknown' | 139,Charlie Green,5000,35,unknown
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:499 -> Edad fuera del rango permitido: '' | 103,John Doe,5000,,prestamo
+01:52:29 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:500 -> Tipo fuera del catalogo permitido: 'unknown' | 108,Alice Brown,5000,30,unknown
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:602 -> Tipo fuera del catalogo permitido: 'invalid' | 601,2024-11-16,1200,invalid
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:604 -> Fecha ilegible o inexistente: 2024-13-01 | 603,2024-13-01,-200,credito
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:606 -> Monto vacio o no numerico: '' | 605,2024/07/30,,invalid
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:607 -> Tipo fuera del catalogo permitido: 'desconocido' | 606,16-05-2024,1000,desconocido
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:611 -> Fecha ilegible o inexistente: 2024-13-01 | 610,2024-13-01,,debito
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:612 -> Monto vacio o no numerico: '' | 611,2024-11-24,,debito
+01:52:29 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:615 -> Monto vacio o no numerico: '' | 614,2024-01-05,,debito
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:616 -> Tipo fuera del catalogo permitido: 'invalid' | 615,2024-11-25,1500,invalid
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:617 -> Tipo fuera del catalogo permitido: 'invalid' | 616,2024-08-03,500,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:504 -> Tipo fuera del catalogo permitido: '-1' | 143,Charlie Green,10000,35,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:618 -> Tipo fuera del catalogo permitido: 'invalid' | 617,17/09/2024,-200,invalid
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:623 -> Tipo fuera del catalogo permitido: 'invalid' | 622,2024-07-08,700,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:505 -> Tipo fuera del catalogo permitido: '-1' | 137,Bob Johnson,5000,40,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:626 -> Monto vacio o no numerico: '' | 625,2024-05-15,,debito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:506 -> Edad fuera del rango permitido: '' | 124,John Doe,7000,,hipoteca
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:627 -> Monto vacio o no numerico: '' | 626,2024/04/12,,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:512 -> Saldo vacio o no numerico: '' | 128,Diana Prince,,35,hipoteca
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:629 -> Monto vacio o no numerico: '' | 628,28-06-2024,,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:513 -> Saldo vacio o no numerico: '' | 133,Alice Brown,,,hipoteca
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:630 -> Tipo fuera del catalogo permitido: 'invalid' | 629,26/12/2024,-200,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:517 -> Tipo fuera del catalogo permitido: 'unknown' | 143,Diana Prince,,35,unknown
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:631 -> Tipo fuera del catalogo permitido: 'desconocido' | 630,20/10/2024,1500,desconocido
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:518 -> Saldo vacio o no numerico: '' | 116,Diana Prince,,30,hipoteca
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:633 -> Tipo fuera del catalogo permitido: 'invalid' | 632,2024/02/11,800,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:521 -> Edad fuera del rango permitido: '' | 107,Alice Brown,10000,,hipoteca
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:636 -> Fecha ilegible o inexistente: 2024-13-01 | 635,2024-13-01,1500,credito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:525 -> Saldo vacio o no numerico: '' | 111,John Doe,,,ahorro
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:638 -> Tipo fuera del catalogo permitido: 'desconocido' | 637,2024-07-01,700,desconocido
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:526 -> Tipo fuera del catalogo permitido: '-1' | 121,Steve Rogers,12000,30,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:639 -> Tipo fuera del catalogo permitido: 'invalid' | 638,20-11-2024,-200,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:528 -> Tipo fuera del catalogo permitido: '-1' | 116,Bob Johnson,,45,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:644 -> Monto vacio o no numerico: '' | 643,27-06-2024,,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:530 -> Saldo vacio o no numerico: '' | 133,John Doe,,25,ahorro
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:645 -> Monto vacio o no numerico: '' | 644,18/05/2024,,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:533 -> Tipo fuera del catalogo permitido: '-1' | 127,Diana Prince,7000,40,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:646 -> Monto vacio o no numerico: '' | 645,26/08/2024,,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:535 -> Tipo fuera del catalogo permitido: '-1' | 115,Jane Smith,12000,45,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:649 -> Tipo fuera del catalogo permitido: 'invalid' | 648,2024-02-21,700,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:537 -> Saldo vacio o no numerico: '' | 109,Diana Prince,,,hipoteca
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:652 -> Fecha ilegible o inexistente: 2024-13-01 | 651,2024-13-01,,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:539 -> Tipo fuera del catalogo permitido: '-1' | 135,John Doe,10000,,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:658 -> Tipo fuera del catalogo permitido: 'invalid' | 657,30-04-2024,1000,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:541 -> Saldo vacio o no numerico: '' | 110,Steve Rogers,,,hipoteca
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:659 -> Tipo fuera del catalogo permitido: 'invalid' | 658,14-10-2024,1200,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:542 -> Edad fuera del rango permitido: '' | 112,Jane Smith,10000,,ahorro
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:661 -> Tipo fuera del catalogo permitido: 'invalid' | 660,2024-07-17,-200,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:543 -> Tipo fuera del catalogo permitido: '-1' | 132,Bob Johnson,10000,100,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:664 -> Monto vacio o no numerico: '' | 663,25-02-2024,,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:544 -> Tipo fuera del catalogo permitido: '-1' | 104,Jane Smith,8000,,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:665 -> Tipo fuera del catalogo permitido: 'desconocido' | 664,2024-02-17,800,desconocido
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:545 -> Saldo vacio o no numerico: '' | 120,Steve Rogers,,30,prestamo
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:666 -> Tipo fuera del catalogo permitido: 'invalid' | 665,2024-04-13,800,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:546 -> Edad fuera del rango permitido: '' | 126,Alice Brown,8000,,prestamo
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:667 -> Monto vacio o no numerico: '' | 666,2024/04/25,,debito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:547 -> Tipo fuera del catalogo permitido: '-1' | 124,Steve Rogers,,45,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:669 -> Monto vacio o no numerico: '' | 668,2024-02-21,,credito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:548 -> Edad fuera del rango permitido: 150 (rango permitido 18-99) | 127,Charlie Green,5000,150,ahorro
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:672 -> Tipo fuera del catalogo permitido: 'desconocido' | 671,17-05-2024,800,desconocido
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:550 -> Tipo fuera del catalogo permitido: '-1' | 131,Jane Smith,10000,40,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:673 -> Fecha ilegible o inexistente: 2024-13-01 | 672,2024-13-01,-200,credito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:552 -> Tipo fuera del catalogo permitido: '-1' | 134,John Doe,8000,40,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:675 -> Tipo fuera del catalogo permitido: 'desconocido' | 674,08/10/2024,3000,desconocido
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:553 -> Tipo fuera del catalogo permitido: 'unknown' | 114,Steve Rogers,,45,unknown
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:676 -> Tipo fuera del catalogo permitido: 'invalid' | 675,10/11/2024,700,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:554 -> Saldo vacio o no numerico: '' | 111,Bob Johnson,,,prestamo
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:677 -> Monto vacio o no numerico: '' | 676,07-08-2024,,debito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:556 -> Tipo fuera del catalogo permitido: '-1' | 133,John Doe,10000,35,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:678 -> Tipo fuera del catalogo permitido: 'invalid' | 677,2024/09/02,700,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:557 -> Edad fuera del rango permitido: 150 (rango permitido 18-99) | 147,Charlie Green,10000,150,hipoteca
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:679 -> Tipo fuera del catalogo permitido: 'invalid' | 678,26-08-2024,800,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:559 -> Saldo vacio o no numerico: '' | 104,Diana Prince,,30,ahorro
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:680 -> Monto vacio o no numerico: '' | 679,19-04-2024,,credito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:560 -> Saldo vacio o no numerico: '' | 115,Diana Prince,,,hipoteca
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:681 -> Fecha ilegible o inexistente: 2024-13-01 | 680,2024-13-01,1500,debito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:561 -> Tipo fuera del catalogo permitido: '-1' | 144,Bob Johnson,12000,35,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:682 -> Fecha ilegible o inexistente: 2024-13-01 | 681,2024-13-01,1000,credito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:563 -> Tipo fuera del catalogo permitido: '-1' | 134,Charlie Green,12000,30,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:685 -> Monto vacio o no numerico: '' | 684,2024/11/04,,credito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:565 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 114,Steve Rogers,7000,100,ahorro
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:686 -> Tipo fuera del catalogo permitido: 'desconocido' | 685,2024-12-20,1000,desconocido
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:568 -> Tipo fuera del catalogo permitido: '-1' | 117,Alice Brown,5000,25,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:687 -> Tipo fuera del catalogo permitido: 'invalid' | 686,2024/11/01,0,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:569 -> Tipo fuera del catalogo permitido: '-1' | 131,Charlie Green,10000,,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:688 -> Monto vacio o no numerico: '' | 687,12-12-2024,,debito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:571 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 109,Jane Smith,5000,100,hipoteca
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:689 -> Tipo fuera del catalogo permitido: 'desconocido' | 688,2024/08/17,1000,desconocido
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:572 -> Tipo fuera del catalogo permitido: '-1' | 126,Alice Brown,8000,30,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:693 -> Monto vacio o no numerico: '' | 692,15-09-2024,,credito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:574 -> Saldo vacio o no numerico: '' | 114,Diana Prince,,,prestamo
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:694 -> Monto vacio o no numerico: '' | 693,2024/02/13,,credito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:575 -> Saldo vacio o no numerico: '' | 139,Steve Rogers,,,ahorro
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:696 -> Tipo fuera del catalogo permitido: 'invalid' | 695,2024/10/20,-200,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:576 -> Tipo fuera del catalogo permitido: '-1' | 149,Bob Johnson,12000,45,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:697 -> Tipo fuera del catalogo permitido: 'invalid' | 696,11-05-2024,700,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:577 -> Edad fuera del rango permitido: '' | 119,Steve Rogers,5000,,hipoteca
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:698 -> Tipo fuera del catalogo permitido: 'invalid' | 697,2024-02-01,800,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:578 -> Tipo fuera del catalogo permitido: '-1' | 104,Steve Rogers,,45,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:699 -> Tipo fuera del catalogo permitido: 'invalid' | 698,29-09-2024,700,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:579 -> Edad fuera del rango permitido: 150 (rango permitido 18-99) | 128,John Doe,8000,150,prestamo
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:700 -> Tipo fuera del catalogo permitido: 'desconocido' | 699,2024-12-10,800,desconocido
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:582 -> Tipo fuera del catalogo permitido: 'unknown' | 116,John Doe,12000,,unknown
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:583 -> Saldo vacio o no numerico: '' | 133,Steve Rogers,,150,ahorro
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:584 -> Tipo fuera del catalogo permitido: '-1' | 135,Bob Johnson,7000,40,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:585 -> Tipo fuera del catalogo permitido: 'unknown' | 142,Jane Smith,8000,40,unknown
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:587 -> Edad fuera del rango permitido: 150 (rango permitido 18-99) | 118,Charlie Green,12000,150,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:588 -> Tipo fuera del catalogo permitido: '-1' | 134,Alice Brown,,45,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:589 -> Edad fuera del rango permitido: 150 (rango permitido 18-99) | 120,Charlie Green,7000,150,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:590 -> Edad fuera del rango permitido: '' | 132,Alice Brown,12000,,ahorro
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:592 -> Saldo vacio o no numerico: '' | 143,Alice Brown,,35,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:593 -> Tipo fuera del catalogo permitido: '-1' | 104,Steve Rogers,,40,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:594 -> Saldo vacio o no numerico: '' | 141,Jane Smith,,40,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:595 -> Tipo fuera del catalogo permitido: '-1' | 106,Alice Brown,5000,45,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:597 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 150,Bob Johnson,12000,100,ahorro
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:599 -> Tipo fuera del catalogo permitido: '-1' | 149,Charlie Green,12000,25,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:600 -> Tipo fuera del catalogo permitido: '-1' | 112,Diana Prince,10000,,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:601 -> Saldo vacio o no numerico: '' | 142,Bob Johnson,,100,hipoteca
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:702 -> Tipo fuera del catalogo permitido: 'desconocido' | 701,01/02/2024,3000,desconocido
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:703 -> Fecha ilegible o inexistente: 2024-13-01 | 702,2024-13-01,,debito
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:704 -> Tipo fuera del catalogo permitido: 'invalid' | 703,2024-05-05,1500,invalid
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:705 -> Tipo fuera del catalogo permitido: 'invalid' | 704,2024-02-19,800,invalid
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:710 -> Tipo fuera del catalogo permitido: 'invalid' | 709,01/05/2024,1500,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] FILTRADO intereses.csv:631 -> Registro duplicado, ya procesado en esta ejecucion: fila identica | 115,Bob Johnson,8000,45,hipoteca
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:712 -> Monto vacio o no numerico: '' | 711,2024/12/06,,invalid
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:713 -> Monto vacio o no numerico: '' | 712,2024/09/11,,debito
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:714 -> Monto vacio o no numerico: '' | 713,2024/07/12,,invalid
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:715 -> Tipo fuera del catalogo permitido: 'invalid' | 714,21/06/2024,700,invalid
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:716 -> Tipo fuera del catalogo permitido: 'invalid' | 715,2024/07/07,700,invalid
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:717 -> Fecha ilegible o inexistente: 2024-13-01 | 716,2024-13-01,-200,debito
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:718 -> Tipo fuera del catalogo permitido: 'desconocido' | 717,2024/03/22,1200,desconocido
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:719 -> Tipo fuera del catalogo permitido: 'invalid' | 718,2024/08/25,700,invalid
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:720 -> Tipo fuera del catalogo permitido: 'invalid' | 719,2024/09/04,1000,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:603 -> Tipo fuera del catalogo permitido: '-1' | 131,Steve Rogers,,30,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:721 -> Tipo fuera del catalogo permitido: 'desconocido' | 720,27-11-2024,1500,desconocido
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:604 -> Tipo fuera del catalogo permitido: '-1' | 102,John Doe,12000,,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:722 -> Monto vacio o no numerico: '' | 721,2024-05-25,,debito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:606 -> Tipo fuera del catalogo permitido: '-1' | 137,Alice Brown,,25,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:723 -> Fecha ilegible o inexistente: 2024-13-01 | 722,2024-13-01,1200,credito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:607 -> Edad fuera del rango permitido: '' | 143,Unknown,7000,,ahorro
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:725 -> Fecha ilegible o inexistente: 2024-13-01 | 724,2024-13-01,1200,debito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:609 -> Edad fuera del rango permitido: 150 (rango permitido 18-99) | 140,Steve Rogers,5000,150,prestamo
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:726 -> Tipo fuera del catalogo permitido: 'desconocido' | 725,06/02/2024,1000,desconocido
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:610 -> Tipo fuera del catalogo permitido: '-1' | 124,Jane Smith,12000,45,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:729 -> Tipo fuera del catalogo permitido: 'invalid' | 728,09/12/2024,1500,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:614 -> Edad fuera del rango permitido: '' | 118,John Doe,12000,,hipoteca
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:732 -> Monto vacio o no numerico: '' | 731,2024/09/04,,credito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:615 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 142,Jane Smith,8000,100,hipoteca
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:734 -> Tipo fuera del catalogo permitido: 'desconocido' | 733,18-03-2024,1000,desconocido
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:616 -> Tipo fuera del catalogo permitido: '-1' | 114,Diana Prince,5000,25,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:737 -> Tipo fuera del catalogo permitido: 'desconocido' | 736,11-05-2024,1500,desconocido
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:617 -> Tipo fuera del catalogo permitido: 'unknown' | 104,Jane Smith,,25,unknown
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:738 -> Tipo fuera del catalogo permitido: 'invalid' | 737,17/03/2024,800,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:618 -> Tipo fuera del catalogo permitido: '-1' | 130,Steve Rogers,,35,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:739 -> Tipo fuera del catalogo permitido: 'invalid' | 738,30/06/2024,3000,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:619 -> Tipo fuera del catalogo permitido: 'unknown' | 139,Alice Brown,12000,35,unknown
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:740 -> Tipo fuera del catalogo permitido: 'invalid' | 739,2024-03-20,3000,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:621 -> Saldo vacio o no numerico: '' | 120,Jane Smith,,40,ahorro
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:742 -> Fecha ilegible o inexistente: 2024-13-01 | 741,2024-13-01,1200,credito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:622 -> Edad fuera del rango permitido: '' | 119,Unknown,5000,,ahorro
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:623 -> Tipo fuera del catalogo permitido: '-1' | 128,Alice Brown,5000,40,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:743 -> Tipo fuera del catalogo permitido: 'invalid' | 742,14-05-2024,3000,invalid
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:746 -> Monto vacio o no numerico: '' | 745,2024/12/23,,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:625 -> Saldo vacio o no numerico: '' | 125,John Doe,,40,ahorro
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:747 -> Tipo fuera del catalogo permitido: 'invalid' | 746,2024/06/08,1500,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:627 -> Tipo fuera del catalogo permitido: '-1' | 140,Diana Prince,7000,150,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:750 -> Tipo fuera del catalogo permitido: 'invalid' | 749,2024/06/20,1200,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:629 -> Edad fuera del rango permitido: '' | 138,Unknown,8000,,prestamo
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:752 -> Tipo fuera del catalogo permitido: 'invalid' | 751,2024-11-13,3000,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:630 -> Tipo fuera del catalogo permitido: '-1' | 113,Diana Prince,8000,40,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:753 -> Monto vacio o no numerico: '' | 752,02-05-2024,,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:632 -> Tipo fuera del catalogo permitido: '-1' | 139,Jane Smith,,30,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:756 -> Fecha ilegible o inexistente: 2024-13-01 | 755,2024-13-01,1200,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:633 -> Tipo fuera del catalogo permitido: 'unknown' | 147,John Doe,8000,40,unknown
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:759 -> Tipo fuera del catalogo permitido: 'invalid' | 758,2024-06-14,1200,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:634 -> Saldo vacio o no numerico: '' | 109,John Doe,,30,ahorro
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:764 -> Tipo fuera del catalogo permitido: 'invalid' | 763,2024/07/23,3000,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:635 -> Tipo fuera del catalogo permitido: '-1' | 106,Bob Johnson,7000,100,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:766 -> Monto vacio o no numerico: '' | 765,2024-06-26,,credito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:636 -> Saldo vacio o no numerico: '' | 140,Bob Johnson,,150,ahorro
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:769 -> Tipo fuera del catalogo permitido: 'invalid' | 768,25/12/2024,700,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:637 -> Tipo fuera del catalogo permitido: '-1' | 137,Diana Prince,8000,,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:770 -> Tipo fuera del catalogo permitido: 'invalid' | 769,25-11-2024,-200,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:639 -> Edad fuera del rango permitido: 150 (rango permitido 18-99) | 127,John Doe,8000,150,prestamo
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:772 -> Monto vacio o no numerico: '' | 771,24/12/2024,,debito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:640 -> Edad fuera del rango permitido: '' | 116,Bob Johnson,12000,,prestamo
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:773 -> Tipo fuera del catalogo permitido: 'invalid' | 772,05-09-2024,1500,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:641 -> Saldo vacio o no numerico: '' | 107,Jane Smith,,,hipoteca
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:774 -> Monto vacio o no numerico: '' | 773,19/03/2024,,debito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:642 -> Saldo vacio o no numerico: '' | 117,John Doe,,100,ahorro
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:776 -> Tipo fuera del catalogo permitido: 'invalid' | 775,06-04-2024,-200,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:643 -> Saldo vacio o no numerico: '' | 118,John Doe,,100,hipoteca
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:781 -> Tipo fuera del catalogo permitido: 'desconocido' | 780,2024-02-16,1200,desconocido
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:644 -> Edad fuera del rango permitido: '' | 129,Alice Brown,5000,,ahorro
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:782 -> Tipo fuera del catalogo permitido: 'invalid' | 781,2024/01/12,700,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:646 -> Edad fuera del rango permitido: '' | 116,Charlie Green,12000,,ahorro
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:783 -> Monto vacio o no numerico: '' | 782,18-11-2024,,credito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:647 -> Tipo fuera del catalogo permitido: '-1' | 107,Diana Prince,10000,,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:785 -> Monto vacio o no numerico: '' | 784,2024-08-09,,credito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:648 -> Tipo fuera del catalogo permitido: '-1' | 105,Alice Brown,5000,45,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:786 -> Monto vacio o no numerico: '' | 785,07-05-2024,,debito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:651 -> Tipo fuera del catalogo permitido: '-1' | 137,Steve Rogers,7000,35,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:787 -> Monto vacio o no numerico: '' | 786,2024-08-25,,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:652 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 138,John Doe,7000,100,ahorro
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:789 -> Monto vacio o no numerico: '' | 788,31/10/2024,,debito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:653 -> Tipo fuera del catalogo permitido: '-1' | 142,Bob Johnson,8000,35,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:793 -> Tipo fuera del catalogo permitido: 'invalid' | 792,2024-07-08,-200,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:654 -> Tipo fuera del catalogo permitido: '-1' | 136,Alice Brown,,45,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:794 -> Tipo fuera del catalogo permitido: 'desconocido' | 793,2024/12/04,1200,desconocido
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:655 -> Tipo fuera del catalogo permitido: '-1' | 104,Diana Prince,8000,30,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:795 -> Monto vacio o no numerico: '' | 794,30-12-2024,,credito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:656 -> Edad fuera del rango permitido: '' | 138,Charlie Green,7000,,hipoteca
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:797 -> Tipo fuera del catalogo permitido: 'invalid' | 796,2024/01/16,-200,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:659 -> Edad fuera del rango permitido: '' | 149,Alice Brown,10000,,prestamo
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:800 -> Fecha ilegible o inexistente: 2024-13-01 | 799,2024-13-01,3000,debito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:661 -> Saldo vacio o no numerico: '' | 109,Diana Prince,,30,ahorro
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:801 -> Tipo fuera del catalogo permitido: 'invalid' | 800,2024/01/27,-100,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:662 -> Tipo fuera del catalogo permitido: '-1' | 116,Diana Prince,5000,45,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:663 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 119,John Doe,8000,100,hipoteca
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:667 -> Edad fuera del rango permitido: '' | 114,Alice Brown,5000,,ahorro
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:668 -> Tipo fuera del catalogo permitido: '-1' | 127,Alice Brown,,,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:669 -> Tipo fuera del catalogo permitido: '-1' | 116,John Doe,10000,,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:672 -> Tipo fuera del catalogo permitido: 'unknown' | 125,Diana Prince,5000,45,unknown
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:675 -> Tipo fuera del catalogo permitido: 'unknown' | 138,John Doe,10000,30,unknown
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:679 -> Saldo vacio o no numerico: '' | 148,Steve Rogers,,,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:680 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 141,Bob Johnson,10000,100,ahorro
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:681 -> Saldo vacio o no numerico: '' | 105,John Doe,,35,ahorro
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:682 -> Saldo vacio o no numerico: '' | 105,Diana Prince,,100,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:683 -> Tipo fuera del catalogo permitido: '-1' | 103,Unknown,7000,40,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:684 -> Tipo fuera del catalogo permitido: '-1' | 148,Steve Rogers,5000,150,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:685 -> Tipo fuera del catalogo permitido: '-1' | 109,Diana Prince,7000,25,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:689 -> Edad fuera del rango permitido: '' | 148,Steve Rogers,7000,,ahorro
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:690 -> Tipo fuera del catalogo permitido: '-1' | 144,Jane Smith,7000,25,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:691 -> Tipo fuera del catalogo permitido: '-1' | 103,Bob Johnson,,100,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:692 -> Edad fuera del rango permitido: 150 (rango permitido 18-99) | 114,Alice Brown,8000,150,prestamo
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:802 -> Monto vacio o no numerico: '' | 801,14/01/2024,,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:693 -> Edad fuera del rango permitido: '' | 129,Steve Rogers,5000,,prestamo
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:804 -> Tipo fuera del catalogo permitido: 'desconocido' | 803,12-02-2024,1200,desconocido
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:694 -> Edad fuera del rango permitido: '' | 123,Steve Rogers,12000,,hipoteca
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:805 -> Tipo fuera del catalogo permitido: 'invalid' | 804,11/07/2024,-200,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:695 -> Edad fuera del rango permitido: '' | 107,Jane Smith,10000,,prestamo
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:806 -> Monto vacio o no numerico: '' | 805,17-10-2024,,debito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:696 -> Tipo fuera del catalogo permitido: '-1' | 134,Steve Rogers,,35,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:807 -> Tipo fuera del catalogo permitido: 'invalid' | 806,14/01/2024,-200,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:697 -> Edad fuera del rango permitido: '' | 113,Diana Prince,10000,,hipoteca
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:810 -> Tipo fuera del catalogo permitido: 'invalid' | 809,2024-01-18,-200,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:699 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 127,Diana Prince,5000,100,ahorro
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:811 -> Monto vacio o no numerico: '' | 810,13/10/2024,,credito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:700 -> Saldo vacio o no numerico: '' | 125,Diana Prince,,,prestamo
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:813 -> Monto vacio o no numerico: '' | 812,20-05-2024,,invalid
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:814 -> Tipo fuera del catalogo permitido: 'invalid' | 813,2024-03-17,1200,invalid
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:816 -> Monto vacio o no numerico: '' | 815,2024/11/19,,debito
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:817 -> Monto vacio o no numerico: '' | 816,2024/01/28,,invalid
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:818 -> Tipo fuera del catalogo permitido: 'invalid' | 817,2024/07/10,3000,invalid
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:820 -> Tipo fuera del catalogo permitido: 'invalid' | 819,13/06/2024,700,invalid
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:822 -> Monto vacio o no numerico: '' | 821,2024-04-07,,debito
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:826 -> Tipo fuera del catalogo permitido: 'invalid' | 825,2024-05-14,700,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] FILTRADO intereses.csv:767 -> Registro duplicado, ya procesado en esta ejecucion: fila identica | 109,Diana Prince,7000,25,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:829 -> Tipo fuera del catalogo permitido: 'invalid' | 828,2024-05-23,1500,invalid
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:830 -> Fecha ilegible o inexistente: 2024-13-01 | 829,2024-13-01,3000,debito
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:836 -> Fecha ilegible o inexistente: 2024-13-01 | 835,2024-13-01,1500,credito
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:838 -> Tipo fuera del catalogo permitido: 'invalid' | 837,2024/07/10,1200,invalid
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:839 -> Fecha ilegible o inexistente: 2024-13-01 | 838,2024-13-01,,credito
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:842 -> Tipo fuera del catalogo permitido: 'invalid' | 841,2024/08/15,0,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:705 -> Tipo fuera del catalogo permitido: '-1' | 106,Bob Johnson,5000,35,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:846 -> Tipo fuera del catalogo permitido: 'invalid' | 845,31-08-2024,1500,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:707 -> Edad fuera del rango permitido: '' | 134,Steve Rogers,8000,,hipoteca
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:847 -> Monto vacio o no numerico: '' | 846,2024-08-30,,credito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:708 -> Edad fuera del rango permitido: '' | 131,Bob Johnson,10000,,prestamo
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:852 -> Monto vacio o no numerico: '' | 851,23/03/2024,,credito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:709 -> Tipo fuera del catalogo permitido: 'unknown' | 131,John Doe,10000,100,unknown
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:853 -> Fecha ilegible o inexistente: 2024-13-01 | 852,2024-13-01,1000,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:710 -> Saldo vacio o no numerico: '' | 129,Alice Brown,,30,prestamo
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:854 -> Tipo fuera del catalogo permitido: 'desconocido' | 853,03-07-2024,700,desconocido
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:713 -> Edad fuera del rango permitido: '' | 125,Jane Smith,5000,,ahorro
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:859 -> Monto vacio o no numerico: '' | 858,12-11-2024,,credito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:714 -> Tipo fuera del catalogo permitido: 'unknown' | 124,Diana Prince,10000,45,unknown
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:861 -> Tipo fuera del catalogo permitido: 'invalid' | 860,2024/02/08,-200,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:716 -> Saldo vacio o no numerico: '' | 144,John Doe,,25,hipoteca
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:863 -> Monto vacio o no numerico: '' | 862,24/07/2024,,debito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:718 -> Tipo fuera del catalogo permitido: '-1' | 114,Alice Brown,7000,25,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:864 -> Fecha ilegible o inexistente: 2024-13-01 | 863,2024-13-01,-200,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:719 -> Edad fuera del rango permitido: '' | 113,Bob Johnson,12000,,hipoteca
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:868 -> Tipo fuera del catalogo permitido: 'invalid' | 867,12-03-2024,-200,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:720 -> Tipo fuera del catalogo permitido: '-1' | 127,Charlie Green,7000,150,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:869 -> Monto vacio o no numerico: '' | 868,2024/11/20,,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:721 -> Tipo fuera del catalogo permitido: '-1' | 124,John Doe,12000,,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:871 -> Tipo fuera del catalogo permitido: 'desconocido' | 870,2024-06-23,1200,desconocido
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:722 -> Edad fuera del rango permitido: '' | 139,Jane Smith,10000,,hipoteca
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:874 -> Monto vacio o no numerico: '' | 873,2024-12-23,,credito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:723 -> Tipo fuera del catalogo permitido: '-1' | 108,Steve Rogers,5000,30,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:875 -> Tipo fuera del catalogo permitido: 'invalid' | 874,2024-12-20,-200,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:724 -> Tipo fuera del catalogo permitido: '-1' | 136,John Doe,8000,35,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:876 -> Monto vacio o no numerico: '' | 875,01/09/2024,,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:726 -> Tipo fuera del catalogo permitido: 'unknown' | 123,John Doe,7000,40,unknown
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:878 -> Monto vacio o no numerico: '' | 877,19-03-2024,,credito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:727 -> Edad fuera del rango permitido: 150 (rango permitido 18-99) | 103,John Doe,7000,150,ahorro
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:879 -> Monto vacio o no numerico: '' | 878,2024-01-08,,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:728 -> Tipo fuera del catalogo permitido: 'unknown' | 140,Bob Johnson,,40,unknown
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:880 -> Monto vacio o no numerico: '' | 879,2024/07/05,,debito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:729 -> Saldo vacio o no numerico: '' | 129,John Doe,,40,prestamo
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:882 -> Tipo fuera del catalogo permitido: 'invalid' | 881,06/11/2024,-100,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:731 -> Edad fuera del rango permitido: '' | 142,Charlie Green,12000,,hipoteca
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:883 -> Monto vacio o no numerico: '' | 882,2024-07-08,,credito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:732 -> Tipo fuera del catalogo permitido: '-1' | 110,Bob Johnson,5000,45,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:884 -> Tipo fuera del catalogo permitido: 'invalid' | 883,2024/04/03,-200,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:734 -> Tipo fuera del catalogo permitido: '-1' | 142,Alice Brown,12000,,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:889 -> Monto vacio o no numerico: '' | 888,2024/12/25,,debito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:735 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 130,Unknown,12000,100,ahorro
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:892 -> Tipo fuera del catalogo permitido: 'invalid' | 891,2024/12/24,3000,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:736 -> Tipo fuera del catalogo permitido: '-1' | 111,Steve Rogers,,,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:894 -> Tipo fuera del catalogo permitido: 'invalid' | 893,2024-11-06,1000,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:737 -> Tipo fuera del catalogo permitido: '-1' | 107,John Doe,,35,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:895 -> Monto vacio o no numerico: '' | 894,30/10/2024,,credito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:738 -> Tipo fuera del catalogo permitido: 'unknown' | 144,John Doe,10000,,unknown
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:897 -> Fecha ilegible o inexistente: 2024-13-01 | 896,2024-13-01,1500,debito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:740 -> Saldo vacio o no numerico: '' | 111,John Doe,,45,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:742 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 125,Alice Brown,10000,100,ahorro
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:744 -> Tipo fuera del catalogo permitido: '-1' | 122,Charlie Green,8000,25,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:745 -> Saldo vacio o no numerico: '' | 137,Diana Prince,,100,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:747 -> Saldo vacio o no numerico: '' | 138,Steve Rogers,,40,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:749 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 123,Unknown,10000,100,ahorro
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:750 -> Edad fuera del rango permitido: '' | 122,Alice Brown,5000,,ahorro
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:751 -> Saldo vacio o no numerico: '' | 139,Charlie Green,,25,hipoteca
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:752 -> Tipo fuera del catalogo permitido: '-1' | 110,Diana Prince,8000,40,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:753 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 137,Jane Smith,8000,100,ahorro
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:754 -> Edad fuera del rango permitido: 150 (rango permitido 18-99) | 139,Charlie Green,7000,150,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:755 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 132,Charlie Green,5000,100,ahorro
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:757 -> Edad fuera del rango permitido: '' | 144,Alice Brown,7000,,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:758 -> Tipo fuera del catalogo permitido: '-1' | 148,Alice Brown,8000,100,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:759 -> Tipo fuera del catalogo permitido: '-1' | 106,Diana Prince,7000,30,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:761 -> Saldo vacio o no numerico: '' | 106,Charlie Green,,35,hipoteca
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:763 -> Saldo vacio o no numerico: '' | 107,Jane Smith,,40,prestamo
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:902 -> Tipo fuera del catalogo permitido: 'invalid' | 901,2024/06/22,-200,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:764 -> Tipo fuera del catalogo permitido: '-1' | 143,Bob Johnson,12000,45,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:903 -> Tipo fuera del catalogo permitido: 'invalid' | 902,30/01/2024,1200,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:765 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 140,Diana Prince,5000,100,prestamo
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:907 -> Monto vacio o no numerico: '' | 906,19/01/2024,,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:766 -> Edad fuera del rango permitido: '' | 114,Bob Johnson,7000,,ahorro
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:910 -> Fecha ilegible o inexistente: 2024-13-01 | 909,2024-13-01,800,credito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:769 -> Saldo vacio o no numerico: '' | 110,Steve Rogers,,25,hipoteca
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:911 -> Tipo fuera del catalogo permitido: 'invalid' | 910,08/08/2024,3000,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:770 -> Tipo fuera del catalogo permitido: 'unknown' | 139,Diana Prince,12000,100,unknown
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:914 -> Tipo fuera del catalogo permitido: 'invalid' | 913,06/04/2024,500,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:771 -> Tipo fuera del catalogo permitido: '-1' | 150,Diana Prince,8000,,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:916 -> Tipo fuera del catalogo permitido: 'invalid' | 915,2024/01/21,-200,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:772 -> Saldo vacio o no numerico: '' | 102,Charlie Green,,30,ahorro
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:917 -> Tipo fuera del catalogo permitido: 'invalid' | 916,2024-12-24,700,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:774 -> Saldo vacio o no numerico: '' | 107,Jane Smith,,100,hipoteca
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:918 -> Fecha ilegible o inexistente: 2024-13-01 | 917,2024-13-01,800,credito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:775 -> Tipo fuera del catalogo permitido: '-1' | 144,Charlie Green,8000,25,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:919 -> Tipo fuera del catalogo permitido: 'invalid' | 918,22-01-2024,-200,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:776 -> Tipo fuera del catalogo permitido: '-1' | 116,Steve Rogers,,40,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:922 -> Monto vacio o no numerico: '' | 921,24/09/2024,,credito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:777 -> Saldo vacio o no numerico: '' | 135,Bob Johnson,,40,hipoteca
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:924 -> Monto vacio o no numerico: '' | 923,20-12-2024,,desconocido
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:778 -> Tipo fuera del catalogo permitido: '-1' | 139,Charlie Green,10000,,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:925 -> Monto vacio o no numerico: '' | 924,30-10-2024,,debito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:779 -> Tipo fuera del catalogo permitido: '-1' | 138,Bob Johnson,8000,,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:926 -> Monto vacio o no numerico: '' | 925,04/11/2024,,credito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:781 -> Tipo fuera del catalogo permitido: 'unknown' | 123,Jane Smith,8000,40,unknown
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:927 -> Tipo fuera del catalogo permitido: 'invalid' | 926,2024-01-23,700,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:782 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 127,Jane Smith,8000,100,ahorro
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:928 -> Fecha ilegible o inexistente: 2024-13-01 | 927,2024-13-01,,credito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:783 -> Tipo fuera del catalogo permitido: '-1' | 145,Bob Johnson,12000,25,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:929 -> Tipo fuera del catalogo permitido: 'invalid' | 928,2024/04/14,1500,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:784 -> Saldo vacio o no numerico: '' | 128,Jane Smith,,45,hipoteca
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:932 -> Monto vacio o no numerico: '' | 931,08-12-2024,,debito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:785 -> Edad fuera del rango permitido: '' | 133,John Doe,12000,,prestamo
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:934 -> Tipo fuera del catalogo permitido: 'invalid' | 933,01-08-2024,-200,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:786 -> Tipo fuera del catalogo permitido: '-1' | 145,Jane Smith,7000,100,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:935 -> Monto vacio o no numerico: '' | 934,02/08/2024,,credito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:787 -> Tipo fuera del catalogo permitido: 'unknown' | 145,Charlie Green,10000,30,unknown
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:936 -> Tipo fuera del catalogo permitido: 'invalid' | 935,26/08/2024,1000,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:788 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 124,Steve Rogers,10000,100,hipoteca
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:939 -> Tipo fuera del catalogo permitido: 'invalid' | 938,08-10-2024,800,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:789 -> Saldo vacio o no numerico: '' | 140,Charlie Green,,35,hipoteca
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:942 -> Monto vacio o no numerico: '' | 941,14-01-2024,,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:790 -> Saldo vacio o no numerico: '' | 114,Bob Johnson,,,prestamo
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:945 -> Monto vacio o no numerico: '' | 944,2024/07/20,,credito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:791 -> Edad fuera del rango permitido: '' | 101,Bob Johnson,8000,,ahorro
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:950 -> Tipo fuera del catalogo permitido: 'desconocido' | 949,15-09-2024,1000,desconocido
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:792 -> Tipo fuera del catalogo permitido: '-1' | 128,Jane Smith,8000,25,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:952 -> Tipo fuera del catalogo permitido: 'invalid' | 951,2024-06-07,3000,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:794 -> Edad fuera del rango permitido: '' | 111,Jane Smith,7000,,ahorro
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:955 -> Tipo fuera del catalogo permitido: 'invalid' | 954,2024/02/10,1000,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:795 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 145,Steve Rogers,12000,100,ahorro
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:957 -> Monto vacio o no numerico: '' | 956,2024/12/01,,credito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:796 -> Tipo fuera del catalogo permitido: '-1' | 114,Steve Rogers,5000,,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:958 -> Tipo fuera del catalogo permitido: 'invalid' | 957,30/12/2024,700,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:797 -> Tipo fuera del catalogo permitido: '-1' | 119,John Doe,12000,35,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:960 -> Tipo fuera del catalogo permitido: 'invalid' | 959,2024-06-25,-200,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:798 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 101,Bob Johnson,12000,100,hipoteca
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:961 -> Tipo fuera del catalogo permitido: 'invalid' | 960,2024/03/29,-200,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:799 -> Tipo fuera del catalogo permitido: '-1' | 107,Unknown,10000,30,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:962 -> Tipo fuera del catalogo permitido: 'invalid' | 961,20-10-2024,-200,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:800 -> Saldo vacio o no numerico: '' | 105,Steve Rogers,,35,hipoteca
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:966 -> Tipo fuera del catalogo permitido: 'invalid' | 965,2024/08/12,3000,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:801 -> Saldo vacio o no numerico: '' | 104,John Doe,,45,ahorro
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:970 -> Tipo fuera del catalogo permitido: 'invalid' | 969,2024/04/15,3000,invalid
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:971 -> Tipo fuera del catalogo permitido: 'invalid' | 970,2024-02-14,3000,invalid
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:973 -> Tipo fuera del catalogo permitido: 'invalid' | 972,03/12/2024,1000,invalid
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:974 -> Fecha ilegible o inexistente: 2024-13-01 | 973,2024-13-01,,debito
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:976 -> Tipo fuera del catalogo permitido: 'desconocido' | 975,2024-04-07,1200,desconocido
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:977 -> Tipo fuera del catalogo permitido: 'invalid' | 976,2024-02-09,800,invalid
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:978 -> Tipo fuera del catalogo permitido: 'invalid' | 977,2024-05-21,3000,invalid
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:979 -> Tipo fuera del catalogo permitido: 'invalid' | 978,2024/04/08,1500,invalid
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:981 -> Tipo fuera del catalogo permitido: 'invalid' | 980,2024-06-22,700,invalid
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:983 -> Monto vacio o no numerico: '' | 982,2024-06-08,,invalid
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:984 -> Tipo fuera del catalogo permitido: 'invalid' | 983,2024-05-23,1500,invalid
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:985 -> Monto vacio o no numerico: '' | 984,07/05/2024,,debito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:802 -> Edad fuera del rango permitido: '' | 122,Bob Johnson,10000,,ahorro
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:803 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 128,Steve Rogers,8000,100,ahorro
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:987 -> Tipo fuera del catalogo permitido: 'invalid' | 986,13/05/2024,700,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:804 -> Tipo fuera del catalogo permitido: '-1' | 117,Jane Smith,,25,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:988 -> Monto vacio o no numerico: '' | 987,13/10/2024,,debito
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:805 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 135,Alice Brown,8000,100,ahorro
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:989 -> Tipo fuera del catalogo permitido: 'invalid' | 988,11-12-2024,1200,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:806 -> Saldo vacio o no numerico: '' | 149,Alice Brown,,35,ahorro
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:994 -> Fecha ilegible o inexistente: 2024-13-01 | 993,2024-13-01,700,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:808 -> Tipo fuera del catalogo permitido: '-1' | 125,Bob Johnson,10000,30,-1
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:995 -> Tipo fuera del catalogo permitido: 'invalid' | 994,2024-06-09,700,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:809 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 126,John Doe,10000,100,prestamo
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:998 -> Tipo fuera del catalogo permitido: 'invalid' | 997,2024-06-14,-200,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:810 -> Saldo vacio o no numerico: '' | 138,Bob Johnson,,35,prestamo
+01:52:30 WARN  [reporteTransaccionesDiariasJob] OMITIDO transacciones.csv:999 -> Monto vacio o no numerico: '' | 998,14-01-2024,,invalid
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:813 -> Edad fuera del rango permitido: '' | 102,Jane Smith,12000,,hipoteca
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:814 -> Tipo fuera del catalogo permitido: '-1' | 120,Diana Prince,12000,45,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:815 -> Tipo fuera del catalogo permitido: '-1' | 101,Bob Johnson,10000,35,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:816 -> Tipo fuera del catalogo permitido: '-1' | 121,Alice Brown,5000,,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:817 -> Saldo vacio o no numerico: '' | 127,Bob Johnson,,,prestamo
+01:52:30 INFO  Step: [procesarTransaccionesStep] executed in 941ms
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:825 -> Tipo fuera del catalogo permitido: '-1' | 108,John Doe,,,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:826 -> Tipo fuera del catalogo permitido: '-1' | 134,John Doe,5000,45,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:827 -> Saldo vacio o no numerico: '' | 105,Alice Brown,,30,ahorro
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:828 -> Tipo fuera del catalogo permitido: '-1' | 138,Diana Prince,10000,30,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:829 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 113,Bob Johnson,5000,100,hipoteca
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:830 -> Edad fuera del rango permitido: '' | 134,Steve Rogers,5000,,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:831 -> Tipo fuera del catalogo permitido: '-1' | 147,Steve Rogers,10000,150,-1
+01:52:30 INFO  Executing step: [generarResumenDiarioStep]
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:834 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 149,Alice Brown,10000,100,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:836 -> Saldo vacio o no numerico: '' | 131,Charlie Green,,25,ahorro
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:837 -> Tipo fuera del catalogo permitido: '-1' | 111,Alice Brown,8000,,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:839 -> Saldo vacio o no numerico: '' | 121,Charlie Green,,45,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:842 -> Edad fuera del rango permitido: '' | 129,Steve Rogers,10000,,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:847 -> Tipo fuera del catalogo permitido: '-1' | 106,John Doe,5000,25,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:851 -> Tipo fuera del catalogo permitido: 'unknown' | 108,Diana Prince,5000,25,unknown
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:853 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 104,John Doe,7000,100,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:855 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 117,Bob Johnson,5000,100,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:856 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 141,Jane Smith,12000,100,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:857 -> Edad fuera del rango permitido: 150 (rango permitido 18-99) | 115,Alice Brown,12000,150,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:860 -> Tipo fuera del catalogo permitido: '-1' | 113,Steve Rogers,8000,25,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:861 -> Saldo vacio o no numerico: '' | 101,Bob Johnson,,100,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:862 -> Edad fuera del rango permitido: '' | 138,Charlie Green,12000,,hipoteca
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:864 -> Tipo fuera del catalogo permitido: '-1' | 146,Steve Rogers,10000,,-1
+01:52:30 INFO  Archivo de salida generado: salida/reporte_transacciones_diarias.csv
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:865 -> Tipo fuera del catalogo permitido: '-1' | 109,Bob Johnson,10000,,-1
+01:52:30 INFO  Reporte diario compilado: 267 dias, 491 transacciones, 166 anomalias
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:867 -> Tipo fuera del catalogo permitido: 'unknown' | 135,Jane Smith,12000,30,unknown
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:869 -> Saldo vacio o no numerico: '' | 142,Bob Johnson,,100,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:870 -> Tipo fuera del catalogo permitido: '-1' | 102,Steve Rogers,7000,40,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:872 -> Tipo fuera del catalogo permitido: '-1' | 110,Unknown,10000,,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:875 -> Tipo fuera del catalogo permitido: '-1' | 145,Diana Prince,8000,100,-1
+01:52:30 INFO  Step: [generarResumenDiarioStep] executed in 23ms
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:876 -> Tipo fuera del catalogo permitido: '-1' | 108,Diana Prince,7000,30,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:878 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 111,Charlie Green,10000,100,hipoteca
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:881 -> Tipo fuera del catalogo permitido: '-1' | 147,Bob Johnson,5000,,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:882 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 116,Steve Rogers,10000,100,hipoteca
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:884 -> Saldo vacio o no numerico: '' | 111,Jane Smith,,,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:885 -> Tipo fuera del catalogo permitido: '-1' | 143,Jane Smith,10000,40,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:886 -> Saldo vacio o no numerico: '' | 123,Diana Prince,,25,ahorro
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:887 -> Tipo fuera del catalogo permitido: '-1' | 127,Steve Rogers,12000,25,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:888 -> Edad fuera del rango permitido: '' | 137,Diana Prince,10000,,hipoteca
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:889 -> Tipo fuera del catalogo permitido: '-1' | 121,John Doe,7000,25,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:890 -> Saldo vacio o no numerico: '' | 106,Steve Rogers,,35,ahorro
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:891 -> Tipo fuera del catalogo permitido: '-1' | 146,Diana Prince,10000,30,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:892 -> Tipo fuera del catalogo permitido: '-1' | 105,John Doe,,30,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:894 -> Tipo fuera del catalogo permitido: '-1' | 142,Alice Brown,8000,25,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:895 -> Saldo vacio o no numerico: '' | 114,Jane Smith,,150,hipoteca
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:896 -> Tipo fuera del catalogo permitido: '-1' | 126,Diana Prince,5000,45,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:897 -> Tipo fuera del catalogo permitido: '-1' | 113,Diana Prince,5000,25,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:898 -> Saldo vacio o no numerico: '' | 118,Steve Rogers,,45,ahorro
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:899 -> Saldo vacio o no numerico: '' | 119,Jane Smith,,35,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:900 -> Edad fuera del rango permitido: '' | 138,Steve Rogers,5000,,hipoteca
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:901 -> Saldo vacio o no numerico: '' | 135,Alice Brown,,45,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] FILTRADO intereses.csv:981 -> Registro duplicado, ya procesado en esta ejecucion: fila identica | 123,Alice Brown,,25,hipoteca
+01:52:30 WARN  [calculoInteresesMensualesJob] FILTRADO intereses.csv:991 -> Registro duplicado, ya procesado en esta ejecucion: fila identica | 119,John Doe,10000,100,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:902 -> Saldo vacio o no numerico: '' | 112,Steve Rogers,,40,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:903 -> Tipo fuera del catalogo permitido: '-1' | 115,John Doe,8000,100,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:904 -> Edad fuera del rango permitido: 150 (rango permitido 18-99) | 125,Bob Johnson,7000,150,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:905 -> Tipo fuera del catalogo permitido: '-1' | 131,Bob Johnson,10000,150,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:906 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 122,John Doe,12000,100,hipoteca
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:908 -> Tipo fuera del catalogo permitido: '-1' | 126,John Doe,10000,,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:910 -> Tipo fuera del catalogo permitido: 'unknown' | 139,Alice Brown,7000,35,unknown
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:911 -> Saldo vacio o no numerico: '' | 136,Bob Johnson,,,hipoteca
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:912 -> Tipo fuera del catalogo permitido: '-1' | 136,Steve Rogers,,40,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:915 -> Tipo fuera del catalogo permitido: '-1' | 147,Steve Rogers,12000,,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:917 -> Edad fuera del rango permitido: '' | 142,Charlie Green,7000,,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:918 -> Tipo fuera del catalogo permitido: '-1' | 143,Jane Smith,10000,25,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:920 -> Tipo fuera del catalogo permitido: '-1' | 111,John Doe,12000,100,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:922 -> Tipo fuera del catalogo permitido: '-1' | 121,Alice Brown,8000,30,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:923 -> Tipo fuera del catalogo permitido: '-1' | 107,John Doe,,45,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:924 -> Saldo vacio o no numerico: '' | 125,Alice Brown,,30,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:927 -> Tipo fuera del catalogo permitido: '-1' | 116,Diana Prince,10000,25,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:929 -> Saldo vacio o no numerico: '' | 122,Jane Smith,,35,hipoteca
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:930 -> Tipo fuera del catalogo permitido: '-1' | 101,Jane Smith,12000,40,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:931 -> Edad fuera del rango permitido: '' | 103,Bob Johnson,7000,,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:932 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 111,John Doe,12000,100,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:933 -> Saldo vacio o no numerico: '' | 121,Bob Johnson,,100,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:936 -> Tipo fuera del catalogo permitido: '-1' | 114,Diana Prince,8000,30,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:939 -> Tipo fuera del catalogo permitido: '-1' | 141,Steve Rogers,,40,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:940 -> Tipo fuera del catalogo permitido: '-1' | 129,Steve Rogers,7000,30,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:941 -> Tipo fuera del catalogo permitido: '-1' | 108,Jane Smith,8000,25,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:943 -> Edad fuera del rango permitido: '' | 142,Diana Prince,8000,,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:947 -> Tipo fuera del catalogo permitido: '-1' | 105,Alice Brown,8000,35,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:948 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 127,Charlie Green,8000,100,hipoteca
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:949 -> Tipo fuera del catalogo permitido: '-1' | 149,Bob Johnson,10000,25,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:950 -> Saldo vacio o no numerico: '' | 134,Diana Prince,,45,hipoteca
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:952 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 148,Charlie Green,12000,100,ahorro
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:953 -> Saldo vacio o no numerico: '' | 115,Bob Johnson,,30,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:954 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 135,John Doe,10000,100,hipoteca
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:956 -> Tipo fuera del catalogo permitido: '-1' | 113,Jane Smith,8000,35,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:957 -> Saldo vacio o no numerico: '' | 108,Jane Smith,,35,ahorro
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:961 -> Tipo fuera del catalogo permitido: '-1' | 132,Unknown,5000,,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:962 -> Edad fuera del rango permitido: '' | 108,Charlie Green,8000,,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:964 -> Tipo fuera del catalogo permitido: 'unknown' | 130,John Doe,12000,30,unknown
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:965 -> Saldo vacio o no numerico: '' | 104,Bob Johnson,,,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:966 -> Tipo fuera del catalogo permitido: '-1' | 102,Alice Brown,12000,30,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:967 -> Edad fuera del rango permitido: '' | 129,Bob Johnson,7000,,ahorro
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:971 -> Saldo vacio o no numerico: '' | 123,Charlie Green,,,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:973 -> Tipo fuera del catalogo permitido: 'unknown' | 107,Diana Prince,5000,45,unknown
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:976 -> Saldo vacio o no numerico: '' | 117,Alice Brown,,45,hipoteca
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:977 -> Tipo fuera del catalogo permitido: '-1' | 129,Jane Smith,,30,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:978 -> Tipo fuera del catalogo permitido: '-1' | 133,John Doe,7000,150,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:979 -> Saldo vacio o no numerico: '' | 113,Jane Smith,,25,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:984 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 146,Charlie Green,12000,100,hipoteca
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:986 -> Tipo fuera del catalogo permitido: '-1' | 127,Diana Prince,8000,35,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:987 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 116,Diana Prince,7000,100,ahorro
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:988 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 126,Charlie Green,7000,100,hipoteca
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:989 -> Tipo fuera del catalogo permitido: '-1' | 135,Alice Brown,7000,,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:993 -> Tipo fuera del catalogo permitido: '-1' | 129,Unknown,7000,35,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:995 -> Tipo fuera del catalogo permitido: '-1' | 116,Alice Brown,10000,30,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:996 -> Edad fuera del rango permitido: 100 (rango permitido 18-99) | 101,Charlie Green,8000,100,prestamo
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:999 -> Tipo fuera del catalogo permitido: '-1' | 139,Charlie Green,,25,-1
+01:52:30 WARN  [calculoInteresesMensualesJob] OMITIDO intereses.csv:1000 -> Saldo vacio o no numerico: '' | 114,Steve Rogers,,100,prestamo
+01:52:30 INFO  Step: [procesarInteresesStep] executed in 1s64ms
+01:52:30 INFO  Executing step: [generarResumenInteresesStep]
+01:52:30 INFO  Archivo de salida generado: salida/intereses_mensuales.csv
+01:52:30 INFO  Interes liquidado: 327 cuentas, total 27214.00
+01:52:30 INFO     - prestamo: 115 cuentas, interes 14850.00
+01:52:30 INFO     - ahorro: 103 cuentas, interes 4120.00
+01:52:30 INFO     - hipoteca: 109 cuentas, interes 8244.00
+01:52:30 INFO  Step: [generarResumenInteresesStep] executed in 9ms
+01:52:30 INFO  Executing step: [exportarRechazadosStep]
+01:52:30 INFO  Bitacora de rechazos exportada: 1230 registros en salida/rechazados_migracionCompleta.csv
+01:52:30 INFO  Step: [exportarRechazadosStep] executed in 48ms
+01:52:30 INFO  
+01:52:30 INFO  ========================================================================================================
+01:52:30 INFO    RESUMEN DE EJECUCION -> migracionCompletaJob
+01:52:30 INFO    jobExecutionId=5  estado=COMPLETED  duracion=1263 ms
+01:52:30 INFO  --------------------------------------------------------------------------------------------------------
+01:52:30 INFO    STEP                                 LEIDOS  ESCRITOS  OMITIDOS  FILTRADOS  ROLLBACKS  ESTADO
+01:52:30 INFO    procesarMovimientosAnualesStep         1000       952        48          0         48  COMPLETED
+01:52:30 INFO    procesarTransaccionesStep              1000       491       509          0        509  COMPLETED
+01:52:30 INFO    procesarInteresesStep                  1000       327       664          9        664  COMPLETED
+01:52:30 INFO    compilarEstadosCuentaStep                 0        20         0          0          0  COMPLETED
+01:52:30 INFO    generarResumenDiarioStep                  0       267         0          0          0  COMPLETED
+01:52:30 INFO    generarResumenInteresesStep               0       327         0          0          0  COMPLETED
+01:52:30 INFO    exportarRechazadosStep                    0      1230         0          0          0  COMPLETED
+01:52:30 INFO  --------------------------------------------------------------------------------------------------------
+01:52:30 INFO    Bitacora de rechazos: 1230 registros (omitidos por excepcion=1221, filtrados por duplicado=9)
+01:52:30 INFO  ========================================================================================================
+01:52:30 INFO  
+01:52:30 INFO  Job 'migracionCompletaJob' finalizado con estado COMPLETED
+01:52:30 INFO  Closing JPA EntityManagerFactory for persistence unit 'default'
+01:52:30 INFO  HikariPool-1 - Shutdown initiated...
+01:52:30 INFO  HikariPool-1 - Shutdown completed.
