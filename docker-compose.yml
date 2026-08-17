@@ -1,0 +1,21 @@
+services:
+  banco-xyz-db:
+    image: postgres:17-alpine
+    container_name: banco-xyz-db
+    environment:
+      POSTGRES_DB: banco_xyz
+      POSTGRES_USER: banco
+      POSTGRES_PASSWORD: banco123
+    # 5433 en el host para no chocar con otra instancia de PostgreSQL en 5432.
+    ports:
+      - "5433:5432"
+    volumes:
+      - banco-xyz-datos:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U banco -d banco_xyz"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  banco-xyz-datos:
